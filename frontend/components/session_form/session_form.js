@@ -26,12 +26,13 @@ class SessionForm extends React.Component {
   render() {
     const { formType } = this.props;
     return (
-      <div>
+      <div className="session-form-container">
         <h2>{formType}</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="session-form">
           <label> Email:
             <input 
               type="text"
+              placeholder="Email or phone number"
               value={this.state.email}
               onChange={this.update('email')}  
             />
@@ -39,6 +40,7 @@ class SessionForm extends React.Component {
           <label> Password:
             <input
               type="text"
+              placeholder="Password"
               value={this.state.password}
               onChange={this.update('password')}
             />
