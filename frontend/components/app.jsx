@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
   Route,
+  Switch
 } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route.js';
 import SplashPage from './splash_page.js';
@@ -10,10 +11,12 @@ import BrowseContainer from './browse/browse_container.js';
 
 const App = () => (
   <header>
-    <Route exact path="/" component={SplashPage} />
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <ProtectedRoute exact path="/browse" component={BrowseContainer} />
+    <Switch>
+      <Route exact path="/" component={SplashPage} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <ProtectedRoute exact path="/browse" component={BrowseContainer} />
+    </Switch>
   </header>
 );
 

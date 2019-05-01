@@ -1,30 +1,69 @@
 
 .session-page {
   display: inline-block;
-  height: 150vh;
   width: 100vw;
+  height: 150vh;
   background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/02dd3f21-2c34-4989-a48b-827dd9edc446/458a6a8c-98f1-4e27-9b78-1232d80d5c04/US-en-20190422-popsignuptwoweeks-perspective_alpha_website_large.jpg');
   background-position: bottom;
+  background: -webkit-radial-gradient(right center, ellipse cover, rgba(255, 255, 255, 0.048) 0%,rgba(0, 0, 0, 0.966) 100%);
 }
 
-.logo2 {
+  
+.session-page .logo {
+  display: block;
   margin: 0px 10px;
-  width: 200px;
-  z-index:2;
-  height: 100px;
+  width: 202px;
+  height: 73px;
   background-image: url('https://fontmeme.com/permalink/190501/477ca523174a4729965a1e0179125ec3.png');
+  background-size: contain;
 }
- 
+
 .session-form-container {
   position: relative;
-  background-color: pink;
+  background-color: rgba(0,0,0,.75);
+  padding: 55px;
   width: 400px;
   height: 600px;
   margin: 0 auto;
+  margin-top: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-title {
+  font-size: 43px;
+  font-weight: 900;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  color: white;
 }
 
 .session-form {
   display: flex;
-  background-color: blue;
+  height: inherit;
   flex-direction: column;
+  align-items: center;
+}
+
+form input {
+  font-size: 21px;
+  background: rgb(51, 51, 51);
+  border-radius: 4px;
+  border: 0;
+  color: #fff;
+  height: 50px;
+  margin-bottom: 87px;
+  width: 300px;
+  padding: 7px 27px 8px;
+}
+
+.submit-form-btn {
+  color: #fff;
+  background-color: #e50914;
+  line-height: normal;
+  padding: 0px;
+  font-weight: 400;
+  border-radius: 3px;
+  margin-top: 59px;
+  font-size: 21px;
+  text-decoration: none;
 }
