@@ -1,7 +1,30 @@
-body {
+
+.session-page {
+  display: inline-block;
+  height: 150vh;
+  width: 100vw;
   background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/02dd3f21-2c34-4989-a48b-827dd9edc446/458a6a8c-98f1-4e27-9b78-1232d80d5c04/US-en-20190422-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  background-position: bottom;
 }
 
+.logo2 {
+  margin: 0px 10px;
+  width: 200px;
+  z-index:2;
+  height: 100px;
+  background-image: url('https://fontmeme.com/permalink/190501/477ca523174a4729965a1e0179125ec3.png');
+}
+ 
 .session-form-container {
+  position: relative;
   background-color: pink;
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.session-form {
+  display: flex;
+  background-color: blue;
+  flex-direction: column;
 }

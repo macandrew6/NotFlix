@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -26,28 +27,36 @@ class SessionForm extends React.Component {
   render() {
     const { formType } = this.props;
     return (
-      <div className="session-form-container">
-        <h2>{formType}</h2>
-        <form onSubmit={this.handleSubmit} className="session-form">
-          <label> Email:
-            <input 
-              type="text"
-              placeholder="Email or phone number"
-              value={this.state.email}
-              onChange={this.update('email')}  
-            />
-          </label>
-          <label> Password:
-            <input
-              type="text"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.update('password')}
-            />
-          </label>
+      <div className="session-page">
+        <header>
+          <Link
+            to="/"
+            className="logo2"><h1>hahsdhf</h1>
+          </Link>
+        </header>
+        <div className="session-form-container">
+          <h2>{formType}</h2>
+          <form onSubmit={this.handleSubmit} className="session-form">
+            <label> Email:
+              <input 
+                type="text"
+                placeholder="Email or phone number"
+                value={this.state.email}
+                onChange={this.update('email')}  
+              />
+            </label>
+            <label> Password:
+              <input
+                type="text"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.update('password')}
+              />
+            </label>
 
-          <input type="submit" value={this.props.formType}/>
-        </form>
+            <input type="submit" value={this.props.formType}/>
+          </form>
+        </div>
       </div>
     );
   }
