@@ -1,0 +1,25 @@
+import React from 'react';
+import { 
+  Link,
+  Route,
+  Switch
+} from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route.js';
+import SplashPage from './splash_page/splash_page.js';
+import SignupFormContainer from './session_form/signup_container.js';
+import LoginFormContainer from './session_form/login_container.js';
+import BrowseContainer from './browse/browse_container.js';
+
+const App = () => (
+  <header>
+    <Switch>
+      <Route exact path="/" component={SplashPage} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <ProtectedRoute exact path="/browse" component={BrowseContainer} />
+    </Switch>
+  </header>
+);
+
+
+export default App;

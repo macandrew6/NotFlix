@@ -1,4 +1,4 @@
-import * as SessionUtil from 'session';
+import * as SessionUtil from '../util/session';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -18,7 +18,7 @@ const receiveErrors = errors => ({
   errors
 });
 
-export const signUp = userForm => dispatch => (
+export const signup = userForm => dispatch => (
   SessionUtil.postUser(userForm).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => (
