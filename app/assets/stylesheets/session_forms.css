@@ -67,3 +67,16 @@ form input {
   font-size: 21px;
   text-decoration: none;
 }
+
+.errors {
+  position: absolute;
+  bottom: 250px;
+  left: 75px;
+  color: #e87c03;
+  margin-bottom: -16px;
+  padding: 6px 3px;
+}
+
+.errors li {
+  margin-bottom: 7px;
+}

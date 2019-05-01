@@ -9,6 +9,11 @@ class SessionForm extends React.Component {
       password: ''
     };
 
+    const demoLogin = {
+      email: 'ChuckNorris@gmail.com',
+      password: 'numbchucks'
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
