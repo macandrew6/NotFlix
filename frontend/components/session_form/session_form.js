@@ -9,12 +9,20 @@ class SessionForm extends React.Component {
       password: ''
     };
 
+    this.handleDemoUser = this.handleDemoUser.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleDemoUser(e) {
     const demoLogin = {
       email: 'ChuckNorris@gmail.com',
       password: 'numbchucks'
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.props.signin(demoLogin);
+    this.setState({
+      email: '',
+      password: ''
+    });
   }
 
   update(field) {
@@ -53,6 +61,7 @@ class SessionForm extends React.Component {
             to="/"
             className="logo"> 
           </Link>
+          <button onClick={this.handleDemoUser}>Demo</button>
         </header>
         <div className="session-form-container">
           <h2 className="form-title">{formType}</h2>

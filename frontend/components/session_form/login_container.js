@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  action: userForm => dispatch(login(userForm)),
+  signin: userForm => dispatch(login(userForm)),
+  action: userForm => dispatch(login(userForm))
 });
 
 export default connect(
