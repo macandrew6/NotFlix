@@ -1,7 +1,7 @@
 <% if logged_in? %>
   <script type="text/javascript">
     window.currentUser = 
-      <%= render("api/users/show.json.jbuilder").html_safe %>
+      <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
   </script>
 <% end %>
 <div id="root"><marquee>HEY THERE TIME TO STOP, REACT ISN'T WORKING ANY MORE, YOU PROBABLY ARE RENDERING SOMETHING YOU CANT, IF NOT THAT CHECK THE CONSOLE, BUT FOR SURE YOU NEED TO STOP DOING WHAT YOU'RE DOING, ALSO DON'T FREAK OUT EVERYTHING WILL BE OKAYYYY!</marquee></div>
