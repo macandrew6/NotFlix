@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import configureStore from './store/configureStore';
+import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-
-  ReactDOM.render(<div>Hey imma root</div>, root);
+  // const store = configureStore();
+  ReactDOM.render(<Root />, root);
 });
