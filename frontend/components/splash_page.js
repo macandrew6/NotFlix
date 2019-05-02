@@ -17,8 +17,8 @@ const SplashPage = () => {
         <h2>See what's next.</h2>
         <h3>Watch anytime. Cancel anytime.</h3>
         <Link 
-        className="signup-btn" 
-        to="/signup">Sign Up</Link>
+          className="signup-btn" 
+          to="/signup">Sign Up</Link>
       </div>
     </div>
   );
