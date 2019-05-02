@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { 
   RECEIVE_SESSION_ERRORS, 
   RECEIVE_CURRENT_USER 
@@ -15,5 +14,4 @@ export default (oldState=[], action) => {
     default:
       return oldState;
   }
-  
 };

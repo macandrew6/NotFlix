@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Typed from 'typed.js';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -14,11 +15,12 @@ class SessionForm extends React.Component {
   }
 
   handleDemoUser(e) {
-    const demoLogin = {
+    e.preventDefault();
+    const demoUser = {
       email: 'ChuckNorris@gmail.com',
       password: 'numbchucks'
     };
-    this.props.signin(demoLogin);
+    this.props.action(demoUser);
     this.setState({
       email: '',
       password: ''
@@ -61,7 +63,7 @@ class SessionForm extends React.Component {
             to="/"
             className="logo"> 
           </Link>
-          <button onClick={this.handleDemoUser}>Demo</button>
+          {formType !== 'Sign Up' ? <button onClick={this.handleDemoUser}>Demo</button> : ''}
         </header>
         <div className="session-form-container">
           <h2 className="form-title">{formType}</h2>

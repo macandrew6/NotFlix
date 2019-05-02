@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  signin: userForm => dispatch(login(userForm)),
   action: userForm => dispatch(login(userForm))
 });
 
