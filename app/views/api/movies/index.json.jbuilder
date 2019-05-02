@@ -1,7 +1,5 @@
-json.array! @movies do |movie|
+@movies.each do |movie|
   json.set! movie.id do
-    debugger;
-    # json.partial! 'movies/movie', movie: movie
-    json.extract! movie, :id, :title, :description, :rating, :content_length
+    json.partial! '/api/movies/movie', movie: movie
   end
 end
