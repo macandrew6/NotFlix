@@ -1,0 +1,1 @@
+# json.extract! movie, :id, :title, :description, :rating, :content_length, movie.image
