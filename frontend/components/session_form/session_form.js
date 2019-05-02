@@ -14,6 +14,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   handleDemoUser(e) {
     e.preventDefault();
     const demoUser = {
@@ -95,7 +99,7 @@ class SessionForm extends React.Component {
               value={this.state.password}
               onChange={this.update('password')}
             />
-            <div className="errors">{this.handleErrors()}</div>
+            {this.props.errors.length > 0 ? <div className="errors">{this.handleErrors()}</div> : ''}
             <input 
               className="submit-form-btn" 
               type="submit" 
