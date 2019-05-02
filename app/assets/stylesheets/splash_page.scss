@@ -26,11 +26,12 @@ body:before {
   height: 73px;
   background-image: url('https://fontmeme.com/permalink/190501/477ca523174a4729965a1e0179125ec3.png');
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .splash-page > header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .content-container {
@@ -55,6 +56,8 @@ body:before {
 }
 
 .login-btn {
+  position: absolute;
+  right: 10px;
   color: #fff;
   background-color: #e50914;
   line-height: normal;

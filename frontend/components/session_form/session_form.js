@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
             to="/"
             className="logo"> 
           </Link>
-          {formType !== 'Sign Up' ? <button onClick={this.handleDemoUser}>Demo</button> : ''}
+          {formType !== 'Sign Up' ? <button className="demo-btn" onClick={this.handleDemoUser}>Demo</button> : ''}
         </header>
         <div className="session-form-container">
           <h2 className="form-title">{formType}</h2>

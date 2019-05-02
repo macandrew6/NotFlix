@@ -7,12 +7,8 @@
   background-position: top right no-repeat;
 }
 
-.session-page header {
-  display: flex;
-  justify-content: space-between;
-}
-  
-.session-page button {
+.session-page .demo-btn {
+  float: right;
   width: 200px;
   height: 50px;
   margin: 10px 30px 10px 10px;
@@ -26,8 +22,8 @@
 }
 
 .session-page .logo {
-  display: block;
-  margin: 0px 10px;
+  float: left;
+  margin: 0px auto;
   width: 202px;
   height: 73px;
   background-image: url('https://fontmeme.com/permalink/190501/477ca523174a4729965a1e0179125ec3.png');
@@ -41,14 +37,14 @@
   width: 370px;
   height: 509px;
   margin: 0 auto;
-  margin-top: 55px;
+  margin-top: 160px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-title {
   font-size: 43px;
   font-weight: 900;
-  margin-top: 19px;
+  margin-top: 26x;
   margin-bottom: 52px;
   color: white;
 }
