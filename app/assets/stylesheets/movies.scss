@@ -1,0 +1,18 @@
+
+.browse-container {
+
+}
+
+.temp-all-movies-container {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.temp-single-movie-container {
+  img {
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+  }
+}
