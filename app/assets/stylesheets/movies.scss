@@ -1,18 +1,36 @@
+.browse-container > header {
+  display: flex;
+  justify-content: space-between;
+  background: #141414;
+  height: 48px;
+}
 
-.browse-container {
+.browse-container .logo {
+  position: absolute;
+  max-width: 123px; 
+}
+
+.movie-lists-container {
 
 }
 
 .temp-all-movies-container {
   display: flex;
   flex-flow: wrap;
+  background: #141414;
+  width: 100vw;
+  height: 150vh;
 }
 
 .temp-single-movie-container {
-  img {
-    height: auto; 
-    width: auto; 
-    max-width: 300px; 
-    max-height: 300px;
-  }
+  height: 300px;
+
+}
+
+.temp-single-movie-container img {
+  border: 1.5px solid #141414;
+  box-sizing: border-box;
+  height: auto; 
+  width: auto; 
+  max-width: 229px; 
 }

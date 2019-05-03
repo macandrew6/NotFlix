@@ -1,5 +1,6 @@
 import React from 'react';
 import Movie from './movie';
+import { Link } from 'react-router-dom';
 
 class Browse extends React.Component {
   constructor(props) {
@@ -16,16 +17,23 @@ class Browse extends React.Component {
     return (
       <div className="browse-container">
         <header>
-          <button onClick={logout}>LOGOUT!</button>
+          <nav>
+            <Link to="/browse" className="logo"></Link>
+          </nav>
+          <nav>
+            <button onClick={logout}>LOGOUT!</button>
+          </nav>
         </header>
-        <ul className="temp-all-movies-container">
-          {movies.map(movie => (
-            <Movie 
-              key={movie.id}
-              movie={movie}
-            />
-          ))}
-        </ul>
+        <div className="movie-lists-container">
+          <ul className="temp-all-movies-container">
+            {movies.map(movie => (
+              <Movie 
+                key={movie.id}
+                movie={movie}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
