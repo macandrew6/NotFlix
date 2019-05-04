@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session';
-import { fetchMovies } from '../../actions/movies'; 
+import { logout } from '../../../actions/session';
+import { fetchMovies } from '../../../actions/movies'; 
 import Browse from './browse';
 
 const mapStateToProps = state => ({

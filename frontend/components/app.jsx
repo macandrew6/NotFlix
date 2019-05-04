@@ -8,8 +8,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route.js';
 import SplashPage from './splash_page';
 import SignupFormContainer from './session_form/signup_container';
 import LoginFormContainer from './session_form/login_container';
-import NavBarContainer from './browse/nav_bar/nav_bar_container';
-import BrowseContainer from './browse/browse_container';
+import NavBarContainer from './browse/nav_bar_components/nav_bar_container.js';
+import BrowseContainer from './browse/browse_components/browse_container.js';
 
 const App = () => (
   <header>

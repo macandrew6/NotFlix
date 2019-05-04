@@ -1,7 +1,7 @@
 import React from 'react';
-import MovieThumbnail from './movieThumbnail';
+import MovieThumbnail from '../movie_components/movieThumbnail';
 import { Link } from 'react-router-dom';
-import NavBarContainer from './nav_bar/nav_bar_container.js';
+import NavBarContainer from '../nav_bar_components/nav_bar_container.js';
 
 class Browse extends React.Component {
   constructor(props) {
