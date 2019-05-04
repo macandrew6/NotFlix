@@ -4,6 +4,10 @@
   height: 200vh;
 }
 
+#shadow-root #controller {
+  display: none;
+}
+
 .movie-lists-container {
 
 }
@@ -11,9 +15,10 @@
 .temp-all-movies-container {
   display: flex;
   flex-flow: wrap;
+  align-items: center;
   padding: 2px 30px 10px;
   width: 100vw;
-  height: 150vh;
+  height: 250px;
 }
 
 .temp-single-movie-container {
@@ -21,10 +26,8 @@
   border: 1.5px solid #141414;
   margin-right: 3px;
   box-sizing: border-box;
-  height: auto; 
-  width: auto; 
   max-width: 229px;
-  transition: all .9s ease-in-out; 
+  transition: all .4s ease-in-out; 
 }
 
 .temp-single-movie-container:hover {
@@ -32,10 +35,23 @@
   border: 1.5px solid #141414;
   margin-right: 3px;
   box-sizing: border-box;
-  height: auto; 
-  width: auto; 
+  background-size: none;
+  max-height: 200px;
   max-width: 370px;
-  // transition: scale(2.1);
 }
+
+.react-player__preview {
+  width: 229px;
+}
+
+.react-player__shadow {
+  width: 200px;
+  height: 200px;
+}
+
+.react-player__play-icon {
+  display: none;
+}
+
 
 
