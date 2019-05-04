@@ -1,5 +1,5 @@
 import React from 'react';
-import Movie from './movie';
+import MovieThumbnail from './movieThumbnail';
 import { Link } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container.js';
 
@@ -24,10 +24,10 @@ class Browse extends React.Component {
     return (
       <div className="browse-container">
         <NavBarContainer />
-        <div className="movie-lists-container">
-          <ul className="temp-all-movies-container">
+        <div className="movie-thumbnail-lists-container">
+          <ul className="temp-all-movie-thumbnails-container">
             {movies.map(movie => (
-              <Movie 
+              <MovieThumbnail
                 key={movie.id}
                 movie={movie}
               />
