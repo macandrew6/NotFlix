@@ -13,7 +13,6 @@ User.create!({
   password: 'numbchucks'
 })
 
-=begin
 ### --------------------------ANIMATION----------------------------- 
 bee = Movie.create({
   title: "Bee Movie",
@@ -21,7 +20,9 @@ bee = Movie.create({
   rating: "PG",
   content_length: "1h 31m"
 })
+bee_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/Bee+Movie+%E2%80%90+Made+with+Clipchamp.mp4")
 bee_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/AAAABRZbex0pOjoiGVgk4LiVlyL9Np07h0sXpWiThMa8MJGonhFusUamMSJInGf5Ng9Eqa4Hk-O267AsyS8unvY7Mg7IblvzyIf4.webp")
+bee.movie.attach(io: bee_vid, filename: "bee_vid.png")
 bee.image.attach(io: bee_img, filename: "bee_img.png")
 
 boss_baby = Movie.create!({
@@ -30,9 +31,12 @@ boss_baby = Movie.create!({
   rating: 'PG',
   content_length: '1h 37m'
 })
+boss_baby_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/Boss+Baby+%E2%80%90+Made+with+Clipchamp+(5).mp4")
 boss_baby_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/boss_baby.webp")
+boss_baby.movie.attach(io: boss_baby_vid, filename: "boss_baby_vid.png")
 boss_baby.image.attach(io: boss_baby_img, filename: "boss_baby_img.png")
 
+=begin
 captain = Movie.create({
   title: "Captain Underpants",
   description: "Fourth-grade pranksters George and Harold hypnotize their humorless principal into thinking he's an undies-adorned superhero.",

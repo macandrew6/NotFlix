@@ -16,4 +16,5 @@ class Movie < ApplicationRecord
   validates :description, :rating, :content_length, presence: true
 
   has_one_attached :image
+  has_one_attached :movie
 end
