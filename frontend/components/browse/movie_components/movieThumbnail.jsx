@@ -1,11 +1,12 @@
 import React from 'react';
-import { Player, ControlBar, PlayToggle } from 'video-react';
+import { Player, ControlBar, PlayToggle, BigPlayButton } from 'video-react';
 
 class Movie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      height: 130,
+      width: 229
     };
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
@@ -38,17 +39,25 @@ class Movie extends React.Component {
   }
 
   handleMouseEnter() {
+    this.setState({
+      height: 200,
+      width: 370
+    });
     this.play();
   }
 
   handleMouseLeave() {
+    this.setState({
+      height:130,
+      width: 229
+    });
     this.pause();
     this.load();
   }
 
   render() {
     const { movie } = this.props;
-    const { poster } = this.state;
+    const { width, height, poster } = this.state;
 
     return (
       <li 
@@ -58,14 +67,16 @@ class Movie extends React.Component {
         >
         <Player 
           ref="player" 
-          src={movie.movieUrl}
+          fluid={false}
+          playsInline={true}
           poster={movie.imageUrl}
+          src={movie.movieUrl}
+          width={width}
+          height={height}
+          controls={false}
         >
-          <ControlBar 
-            autoHide={false} 
-          >
-            <PlayToggle />
-          </ControlBar>
+          <ControlBar disableDefaultControls/>
+          <BigPlayButton position="center" />
         </Player>
       </li>
     );

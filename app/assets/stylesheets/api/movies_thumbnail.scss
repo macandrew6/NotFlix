@@ -1,11 +1,9 @@
+@import 'video-react/styles/scss/video-react';
+
 .browse-container {
   background: #141414;
   width: 100vw;
   height: 200vh;
-}
-
-#shadow-root #controller {
-  display: none;
 }
 
 .movie-thumbnail-lists-container {
@@ -18,7 +16,7 @@
   align-items: center;
   padding: 2px 30px 10px;
   width: 100vw;
-  height: 250px;
+  height: 200px;
 }
 
 .temp-single-movie-thumbnail-container {
@@ -40,6 +38,15 @@
   max-width: 370px;
 }
 
+.video-react .video-react-control-bar {
+  display: none;
+}
 
+.video-react .video-react-big-play-button {
+  display: none;
+}
 
-
+.video-react .video-react-video {
+  max-width: 370px;
+  max-height: 220px;
+}
