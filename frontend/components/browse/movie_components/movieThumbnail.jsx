@@ -72,7 +72,7 @@ class Movie extends React.Component {
 
   render() {
     const { movie } = this.props;
-    const { muted, width, height, poster } = this.state;
+    const { width, height } = this.state;
 
     return (
       <div 
@@ -84,6 +84,7 @@ class Movie extends React.Component {
           ref={(p) => {
             this.player = p;
           }}
+          preload
           fluid={false}
           poster={movie.imageUrl}
           src={movie.movieUrl}
