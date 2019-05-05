@@ -24,5 +24,6 @@ class Movie < ApplicationRecord
     source: :genre
 
   has_one_attached :image
+  has_one_attached :trailer
   has_one_attached :movie
 end

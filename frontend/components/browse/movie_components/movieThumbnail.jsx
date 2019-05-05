@@ -7,6 +7,9 @@ class Movie extends React.Component {
     this.state = {
       height: 130,
       width: 229,
+      sources: {
+        trailer: this.props.movie.movieUrl,
+      }
     };
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
