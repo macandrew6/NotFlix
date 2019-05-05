@@ -13,6 +13,11 @@ User.create!({
   password: 'numbchucks'
 })
 
+Genre.create({name: "animation"})
+Genre.create({name: "action/adventure"})
+Genre.create({name: "documentary"})
+Genre.create({name: "horror"})
+
 ### --------------------------ANIMATION----------------------------- 
 bee = Movie.create({
   title: "Bee Movie",
