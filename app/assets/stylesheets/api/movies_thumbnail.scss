@@ -47,6 +47,7 @@
 }
 
 .video-react .video-react-video {
+  transition: all 1.5s ease-in-out; 
   max-width: 370px;
   max-height: 220px;
 }

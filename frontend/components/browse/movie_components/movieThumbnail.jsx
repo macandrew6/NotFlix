@@ -6,7 +6,7 @@ class Movie extends React.Component {
     super(props);
     this.state = {
       height: 130,
-      width: 229
+      width: 229,
     };
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
@@ -14,10 +14,11 @@ class Movie extends React.Component {
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.load = this.load.bind(this);
+    this.toggleSound = this.toggleSound.bind(this);
   }
   
   componentDidMount() {
-    this.refs.player.subscribeToStateChange(this.handleStateChange);
+    this.player.subscribeToStateChange(this.handleStateChange);
   }
 
   handleStateChange(state) {
@@ -27,23 +28,35 @@ class Movie extends React.Component {
   }
 
   play() {
-    this.refs.player.play();
+    this.player.play();
   }
 
   pause() {
-    this.refs.player.pause();
+    this.player.pause();
   }
 
   load() {
-    this.refs.player.load();
+    this.player.load();
   }
 
+  toggleSound(soundState) {
+    return () => {
+      if (this.player.muted) {
+        this.player.muted = soundState;
+      } else {
+        this.player.muted = !soundState;
+      }
+    };
+  }
+  
   handleMouseEnter() {
     this.setState({
       height: 200,
       width: 370
     });
-    this.play();
+    setTimeout(() => {
+      this.play();
+    }, 100);
   }
 
   handleMouseLeave() {
@@ -51,24 +64,27 @@ class Movie extends React.Component {
       height:130,
       width: 229
     });
-    this.pause();
-    this.load();
+    setTimeout(() => {
+      this.pause();
+      this.load();
+    }, 300);
   }
 
   render() {
     const { movie } = this.props;
-    const { width, height, poster } = this.state;
+    const { muted, width, height, poster } = this.state;
 
     return (
-      <li 
+      <div 
         className="temp-single-movie-thumbnail-container"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         >
         <Player 
-          ref="player" 
+          ref={(p) => {
+            this.player = p;
+          }}
           fluid={false}
-          playsInline={true}
           poster={movie.imageUrl}
           src={movie.movieUrl}
           width={width}
@@ -76,9 +92,9 @@ class Movie extends React.Component {
           controls={false}
         >
           <ControlBar disableDefaultControls/>
-          <BigPlayButton position="center" />
         </Player>
-      </li>
+        <button onClick={this.toggleSound(false)}>sound</button>
+      </div>
     );
   }
 }

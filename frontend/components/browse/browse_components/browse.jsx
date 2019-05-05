@@ -12,6 +12,13 @@ class Browse extends React.Component {
   componentDidMount() {
     this.props.fetchMovies();
   }
+
+  componentDidUpdate(prevProps) {
+    console.log('i updated')
+    if(this.prevProps === this.props) {
+      this.props.fetchMovies();
+    }
+  }
   // add scroll even listener or research onScroll react handler
   // window.addEventListener('scroll', this.handleScroll);
  
@@ -25,14 +32,14 @@ class Browse extends React.Component {
       <div className="browse-container">
         <NavBarContainer />
         <div className="movie-thumbnail-lists-container">
-          <ul className="temp-all-movie-thumbnails-container">
+          <div className="temp-all-movie-thumbnails-container">
             {movies.map(movie => (
               <MovieThumbnail
                 key={movie.id}
                 movie={movie}
               />
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     );
