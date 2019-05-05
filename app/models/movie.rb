@@ -12,8 +12,16 @@
 #
 
 class Movie < ApplicationRecord
-  validates :title, uniqueness: true, presence: true
+  validates :title, presence: true, uniqueness: true
   validates :description, :rating, :content_length, presence: true
+
+  has_many :movie_genres,
+    foreign_key: :movie_id,
+    class_name: :MovieGenre
+
+  has_many :genres,
+    through: :movie_genres,
+    source: :genre
 
   has_one_attached :image
   has_one_attached :movie

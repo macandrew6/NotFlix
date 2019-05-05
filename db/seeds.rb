@@ -18,6 +18,10 @@ Genre.create({name: "action/adventure"})
 Genre.create({name: "documentary"})
 Genre.create({name: "horror"})
 
+7.times do |i|
+  MovieGenre.create({genre_id: 1, movie_id: i+1})
+end
+
 ### --------------------------ANIMATION----------------------------- 
 bee = Movie.create({
   title: "Bee Movie",
@@ -27,7 +31,7 @@ bee = Movie.create({
 })
 bee_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/Bee+Movie+%E2%80%90+Made+with+Clipchamp.mp4")
 bee_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/AAAABRZbex0pOjoiGVgk4LiVlyL9Np07h0sXpWiThMa8MJGonhFusUamMSJInGf5Ng9Eqa4Hk-O267AsyS8unvY7Mg7IblvzyIf4.webp")
-bee.movie.attach(io: bee_vid, filename: "bee_vid.png")
+bee.movie.attach(io: bee_vid, filename: "bee_vid.mp4")
 bee.image.attach(io: bee_img, filename: "bee_img.png")
 
 boss_baby = Movie.create!({
@@ -38,17 +42,18 @@ boss_baby = Movie.create!({
 })
 boss_baby_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/Boss+Baby+%E2%80%90+Made+with+Clipchamp+(5).mp4")
 boss_baby_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/boss_baby.webp")
-boss_baby.movie.attach(io: boss_baby_vid, filename: "boss_baby_vid.png")
+boss_baby.movie.attach(io: boss_baby_vid, filename: "boss_baby_vid.mp4")
 boss_baby.image.attach(io: boss_baby_img, filename: "boss_baby_img.png")
 
-=begin
 captain = Movie.create({
   title: "Captain Underpants",
   description: "Fourth-grade pranksters George and Harold hypnotize their humorless principal into thinking he's an undies-adorned superhero.",
   rating: "PG",
   content_length: "1h 28m"
 })
+captain_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/captain.mp4")
 captain_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/AAAABShbycpQOxZmKd8o7rlwPDLO8t4CjQNZ5DySHwWqPhe8iNOy5y-kA8Fm9JcLrDcF17wRqeyyfPcg3NeCwSL-SzdjxCCyuOqS.webp")
+captain.movie.attach(io: captain_vid, filename: "captain_vid.mp4")
 captain.image.attach(io: captain_img, filename: "captain_img.png")
 
 incredibles = Movie.create!({
@@ -57,7 +62,9 @@ incredibles = Movie.create!({
   rating: 'PG',
   content_length: '1h 57m'
 })
+incredibles_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/incredibles.mp4")
 incredibles_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/incredibles.webP")
+incredibles.movie.attach(io: incredibles_vid, filename: "incredibles_vid.mp4")
 incredibles.image.attach(io: incredibles_img, filename: "incredibles_img.png")
 
 despicable = Movie.create({
@@ -66,7 +73,9 @@ despicable = Movie.create({
   rating: "PG",
   content_length: "1h 29m"
 })
+despicable_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/despicable.mp4")
 despicable_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/AAAABTC2rctY_Az6QyVXWxLBLVTOxWGUHjxM9SY3Ft8f9TnYVnbN5KxU-rGhg_gFEUS9wUppFE8UPCjEn60peomsSwCcFhxyrsbC.webp")
+despicable.movie.attach(io: despicable_vid, filename: "despicable_vid.mp4")
 despicable.image.attach(io: despicable_img, filename: "despicable_img.png")
 
 cars = Movie.create({
@@ -75,7 +84,9 @@ cars = Movie.create({
   rating: "G",
   content_length: "1h 42m"
 })
+cars_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/cars.mp4")
 cars_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/AAAABds2s6wMUNGslsmulRn1JdcfjCQS797b0T7oZ8fdBfHynNdlSvTahotrFqmXJELhBHb-4hwiKfwZHel-f3XQ7iOudoAYZOgD.webp")
+cars.movie.attach(io: cars_vid, filename: "cars_vid.mp4")
 cars.image.attach(io: cars_img, filename: "cars_img.png")
 
 bolt = Movie.create({
@@ -84,10 +95,12 @@ bolt = Movie.create({
   rating: "PG",
   content_length: "1h 38m"
 })
+bolt_vid = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/videos/bolt.mp4")
 bolt_img = open("https://s3-us-west-1.amazonaws.com/notflix-dev/movie_images/animation/images/AAAABevscmjVm8HdEWfxeX1qroJHhqLS_oIky38U_VVQXt1vwinXiCGjltoCAQ7wot54pmc8BelX2cQhmTSiMNUTlvtzzD5dLPG5.webp")
+bolt.movie.attach(io: bolt_vid, filename: "bolt_vid.mp4")
 bolt.image.attach(io: bolt_img, filename: "bolt_img.png")
 
-
+=begin
 # --------------------------ACTION/ADVENTURE----------------------------- 
 gog = Movie.create!({
   title: 'Gaurdians of the Galaxy',
