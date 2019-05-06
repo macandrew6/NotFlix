@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MovieThumbnail from '../movie_components/movieThumbnail';
 import NavBarContainer from '../nav_bar_components/nav_bar_container.js';
 import BrowseIndexItem from './browse_index_item';
 
@@ -25,16 +24,19 @@ class Browse extends React.Component {
   // }
 
   render() {
-    const { logout, movies, genres } = this.props;
-    
+    const { movies, genres } = this.props;
     return (
       <div className="browse-container">
         <NavBarContainer />
-        {genres.forEach(genre => {
-          genre.movieIds.map(id => (
-            <BrowseIndexItem key={genre.id} movies={movies[id]} genre={genre} />
-          ));
-        })};
+        {
+          genres.map((genre) => (
+            <BrowseIndexItem 
+              genre={genre} 
+              movies={movies}
+              key={genre.id}
+            />
+          ))
+        };
       </div>
     );
   }
@@ -42,13 +44,4 @@ class Browse extends React.Component {
 
 export default Browse;
 
-// <div className="movie-thumbnail-lists-container">
-//   <div className="temp-all-movie-thumbnails-container">
-//     {movies.map(movie => (
-//       <MovieThumbnail
-//         key={movie.id}
-//         movie={movie}
-//       />
-//     ))}
-//   </div>
-// </div>
+

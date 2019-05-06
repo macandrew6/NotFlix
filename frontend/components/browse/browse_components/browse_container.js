@@ -9,7 +9,7 @@ import Browse from './browse';
 
 const mapStateToProps = ({ entities: { movies, genres, movieGenres }}) => ({
   movies: Object.keys(movies).map(id => movies[id]),
-  genres: Object.keys(genres).map(id => genres[id]),
+  genres: Object.keys(genres).map(id => genres[id])
 });
 
 const mapDispatchToProps = dispatch => ({

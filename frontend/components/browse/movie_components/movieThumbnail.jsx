@@ -1,7 +1,7 @@
 import React from 'react';
 import { Player, ControlBar } from 'video-react';
 
-class Movie extends React.Component {
+class MovieThumbnail extends React.Component {
   constructor(props) {
     super(props);
     this.sources = {
@@ -142,4 +142,4 @@ class Movie extends React.Component {
 
 // onstart render a button that controls volume and a place holder button for adding movie to list
 
-export default Movie;
+export default MovieThumbnail;
