@@ -1,19 +1,21 @@
 import React from 'react';
-import MovieThumbnail from '../movie_components/movieThumbnail';
 import { Link } from 'react-router-dom';
+import MovieThumbnail from '../movie_components/movieThumbnail';
 import NavBarContainer from '../nav_bar_components/nav_bar_container.js';
+import BrowseIndexItem from './browse_index_item';
 
 class Browse extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.state;
   }
 
   componentDidMount() {
+    this.props.fetchGenres();
     this.props.fetchMovieGenres();
     this.props.fetchMovies();
-    this.props.fetchGenres();
   }
+
+
 
   // add scroll even listener or research onScroll react handler
   // window.addEventListener('scroll', this.handleScroll);
@@ -23,23 +25,27 @@ class Browse extends React.Component {
   // }
 
   render() {
-    const { logout, movies } = this.props;
+    const { logout, movies, moviesByGenre } = this.props;
+
+    console.log(moviesByGenre);
     return (
       <div className="browse-container">
         <NavBarContainer />
-        <div className="movie-thumbnail-lists-container">
-          <div className="temp-all-movie-thumbnails-container">
-            {movies.map(movie => (
-              <MovieThumbnail
-                key={movie.id}
-                movie={movie}
-              />
-            ))}
-          </div>
-        </div>
+        <BrowseIndexItem />
       </div>
     );
   }
 }
 
 export default Browse;
+
+// <div className="movie-thumbnail-lists-container">
+//   <div className="temp-all-movie-thumbnails-container">
+//     {movies.map(movie => (
+//       <MovieThumbnail
+//         key={movie.id}
+//         movie={movie}
+//       />
+//     ))}
+//   </div>
+// </div>
