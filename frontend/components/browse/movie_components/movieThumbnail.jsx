@@ -1,4 +1,6 @@
 import React from 'react';
+import MovieShowDetails from './movie_show_details';
+import { Link } from 'react-router-dom';
 import { Player, ControlBar } from 'video-react';
 
 class MovieThumbnail extends React.Component {
@@ -13,17 +15,21 @@ class MovieThumbnail extends React.Component {
       width: 229,
       source: this.sources.trailer,
       autoplay: false,
-      toggleControls: false
+      toggleControls: false,
+      show: false,
+      showClassName: "hide"
     };
   
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleStateChange = this.handleStateChange.bind(this);
-    // this.handleFullScreenChange = this.handleFullScreenChange.bind(this);
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.load = this.load.bind(this);
     this.toggleSound = this.toggleSound.bind(this);
+    this.openShowPage = this.openShowPage.bind(this);
+    this.closeShowPage = this.closeShowPage.bind(this);
+    // this.handleFullScreenChange = this.handleFullScreenChange.bind(this); figure this out
   }
   
   componentDidMount() {
@@ -101,13 +107,21 @@ class MovieThumbnail extends React.Component {
     }, 300);
   }
 
-  // handleFullScreenChange() {
-  //   return () => this.player.handleFullScreenChange(() => {
-  //     this.setState({
-  //       source: this.sources.trailerUrl
-  //     });
-  //   });
-  // }
+  openShowPage(e) {
+    e.preventDefault();
+    this.setState({
+      show: true,
+      showClass: "show"
+    });
+  }
+
+  closeShowPage(e) {
+    e.preventDefault();
+    this.setState({
+      show: false,
+      showClass: "hide"
+    });
+  }
       
   render() {
 
@@ -120,19 +134,20 @@ class MovieThumbnail extends React.Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         >
-        <Player 
-          ref={(p) => {
-            this.player = p;
-          }}
-          autoplay={autoplay}
-          fluid={false}
-          poster={movie.imageUrl}
-          src={source}
-          width={width}
-          height={height}
-        >
-          <ControlBar style={{display: "flex"}}/>
-        </Player>
+        <Link to={`/browse/watch/${movie.id}`}>
+          <Player 
+            ref={(p) => {
+              this.player = p;
+            }}
+            autoplay={autoplay}
+            fluid={false}
+            poster={movie.imageUrl}
+            src={source}
+            width={width}
+            height={height}
+          >
+          </Player>
+        </Link>
         <button onClick={this.toggleSound(false)}>sound</button>
         <button onClick={this.changeSource()}>play</button>
       </div>

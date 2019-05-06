@@ -3,11 +3,10 @@ import { logout } from '../../../actions/session';
 import { fetchMovies } from '../../../actions/movies'; 
 import { fetchGenres } from '../../../actions/genres'; 
 import { fetchAllMovieGenres } from '../../../actions/movie_genres';
-import { allMoviesByGenre } from '../../../reducers/selectors';
 
 import Browse from './browse';
 
-const mapStateToProps = ({ entities: { movies, genres, movieGenres }}) => ({
+const mapStateToProps = ({entities: { movies, genres, movieGenres }}) => ({
   movies: Object.keys(movies).map(id => movies[id]),
   genres: Object.keys(genres).map(id => genres[id])
 });

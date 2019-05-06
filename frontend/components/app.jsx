@@ -10,6 +10,7 @@ import SignupFormContainer from './session_form/signup_container';
 import LoginFormContainer from './session_form/login_container';
 import NavBarContainer from './browse/nav_bar_components/nav_bar_container.js';
 import BrowseContainer from './browse/browse_components/browse_container.js';
+import MovieShowDetailsContainer from './browse/movie_components/movie_show_details_container';
 
 const App = () => (
   <header>
@@ -18,6 +19,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/browse" component={BrowseContainer} />
+      <ProtectedRoute path="/browse/:movieId" component={MovieShowDetailsContainer} />
       <Redirect to="/" />
     </Switch>
   </header>
