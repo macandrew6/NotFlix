@@ -1,0 +1,2 @@
+module Api::MovieGenresHelper
+end

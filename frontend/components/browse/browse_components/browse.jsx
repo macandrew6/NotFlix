@@ -10,7 +10,9 @@ class Browse extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchMovieGenres();
     this.props.fetchMovies();
+    this.props.fetchGenres();
   }
 
   // add scroll even listener or research onScroll react handler

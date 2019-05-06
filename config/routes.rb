@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :movies, only: [:index]
     resources :genres, only: [:index, :show]
+    resources :movie_genres, only: [:index]
   end
   
   root to: "static_pages#root"

@@ -1,14 +1,20 @@
 import { connect } from 'react-redux';
 import { logout } from '../../../actions/session';
 import { fetchMovies } from '../../../actions/movies'; 
+import { fetchGenres } from '../../../actions/genres'; 
+import { fetchAllMovieGenres } from '../../../actions/movie_genres';
 import Browse from './browse';
 
-const mapStateToProps = state => ({
-  movies: Object.keys(state.entities.movies).map(id => state.entities.movies[id])
+const mapStateToProps = ({ entities: { movies, genres, movieGenres }}) => ({
+  movies: Object.keys(movies).map(id => movies[id]),
+  genres: Object.keys(genres).map(id => genres[id]),
+  moviesGenres: Object.keys(movieGenres).map(id => movieGenres[id])
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchGenres: () => dispatch(fetchGenres()),
   fetchMovies: () => dispatch(fetchMovies()),
+  fetchMovieGenres: () => dispatch(fetchAllMovieGenres()),
   logout: () => dispatch(logout())
 });
 

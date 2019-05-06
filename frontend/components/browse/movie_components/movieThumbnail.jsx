@@ -31,12 +31,9 @@ class Movie extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log('i updated');
   }
 
   handleStateChange(state, prevState) {
-    console.log("current state", state);
-    console.log("this is prior state ",prevState);
     this.setState({
       player: state
     });
