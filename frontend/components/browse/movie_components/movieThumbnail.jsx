@@ -1,19 +1,25 @@
 import React from 'react';
-import { Player, ControlBar, PlayToggle, BigPlayButton } from 'video-react';
+import { Player, ControlBar } from 'video-react';
 
 class Movie extends React.Component {
   constructor(props) {
     super(props);
+    this.sources = {
+      trailer: this.props.movie.trailerUrl,
+      movie: this.props.movie.movieUrl
+    };
     this.state = {
       height: 130,
       width: 229,
-      sources: {
-        trailer: this.props.movie.movieUrl,
-      }
+      source: this.sources.trailer,
+      autoplay: false,
+      toggleControls: false
     };
+  
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleStateChange = this.handleStateChange.bind(this);
+    // this.handleFullScreenChange = this.handleFullScreenChange.bind(this);
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.load = this.load.bind(this);
@@ -24,7 +30,13 @@ class Movie extends React.Component {
     this.player.subscribeToStateChange(this.handleStateChange);
   }
 
-  handleStateChange(state) {
+  componentDidUpdate() {
+    console.log('i updated');
+  }
+
+  handleStateChange(state, prevState) {
+    console.log("current state", state);
+    console.log("this is prior state ",prevState);
     this.setState({
       player: state
     });
@@ -51,8 +63,26 @@ class Movie extends React.Component {
       }
     };
   }
+
+  changeSource() {
+    return () => {
+      console.log(this.props.movie.movieUrl);
+      this.setState({
+        source: this.sources.movie,
+        width: null,
+        height: null,
+        autoplay: !this.state.autoplay,
+        toggleControls: !this.state.toggleControls
+      });
+      setTimeout(() => {
+        this.player.toggleFullscreen();
+        this.play();
+      }, 300);
+    };
+  }
   
-  handleMouseEnter() {
+  handleMouseEnter(e) {
+    e.preventDefault();
     this.setState({
       height: 200,
       width: 370
@@ -62,7 +92,8 @@ class Movie extends React.Component {
     }, 100);
   }
 
-  handleMouseLeave() {
+  handleMouseLeave(e) {
+    e.preventDefault();
     this.setState({
       height:130,
       width: 229
@@ -73,9 +104,18 @@ class Movie extends React.Component {
     }, 300);
   }
 
+  // handleFullScreenChange() {
+  //   return () => this.player.handleFullScreenChange(() => {
+  //     this.setState({
+  //       source: this.sources.trailerUrl
+  //     });
+  //   });
+  // }
+      
   render() {
+
     const { movie } = this.props;
-    const { width, height } = this.state;
+    const { width, height, source, autoplay } = this.state;
 
     return (
       <div 
@@ -87,17 +127,17 @@ class Movie extends React.Component {
           ref={(p) => {
             this.player = p;
           }}
-          preload
+          autoplay={autoplay}
           fluid={false}
           poster={movie.imageUrl}
-          src={movie.movieUrl}
+          src={source}
           width={width}
           height={height}
-          controls={false}
         >
-          <ControlBar disableDefaultControls/>
+          <ControlBar style={{display: "flex"}}/>
         </Player>
         <button onClick={this.toggleSound(false)}>sound</button>
+        <button onClick={this.changeSource()}>play</button>
       </div>
     );
   }

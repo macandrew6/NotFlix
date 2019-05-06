@@ -13,12 +13,6 @@ class Browse extends React.Component {
     this.props.fetchMovies();
   }
 
-  componentDidUpdate(prevProps) {
-    console.log('i updated')
-    if(this.prevProps === this.props) {
-      this.props.fetchMovies();
-    }
-  }
   // add scroll even listener or research onScroll react handler
   // window.addEventListener('scroll', this.handleScroll);
  

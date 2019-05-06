@@ -24,16 +24,14 @@
 //   border: 1.5px solid #141414;
 //   margin-right: 3px;
 //   box-sizing: border-box;
-//   max-width: 229px;
+//   width: 229px;
 //   transition: all .4s ease-in-out; 
 // }
 
 // .temp-single-movie-thumbnail-container:hover {
 //   position: relative;
-//   border: 1.5px solid #141414;
 //   margin-right: 3px;
 //   box-sizing: border-box;
-//   background-size: none;
 //   max-height: 200px;
 //   max-width: 370px;
 // }
@@ -42,13 +40,12 @@
   display: none;
 }
 
-.video-react .video-react-big-play-button {
-  display: none;
+.video-react .video-react-control-bar .enable{
+  display: flex;
 }
 
-.video-react .video-react-video {
-  max-width: 370px;
-  max-height: 220px;
+.video-react .video-react-big-play-button {
+  display: none;
 }
 
 .video-react .video-react-loading-spinner {

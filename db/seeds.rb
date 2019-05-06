@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 User.destroy_all
 Movie.destroy_all
 MovieGenre.destroy_all
@@ -28,7 +29,7 @@ def formatMovie(movie_data, movie_img, movie_trailer, movie_vid)
   video = open(movie_vid)
   movie_data.image.attach(io: image, filename: "#{movie_data.title.split.join}.png")
   movie_data.trailer.attach(io: trailer, filename: "#{movie_data.title.split.join}.mp4")
-  movie_data.movie.attach(io: video, filename: "#{movie_data.title.split.join}.mp4")
+  movie_data.movie.attach(io: video, filename: "#{movie_data.title.split.join}.mpv")
 end
 
 ### --------------------------ANIMATION----------------------------- 
@@ -78,28 +79,28 @@ bolt = Movie.create!({
 })
 =end
 ANIMATION_IMG = [
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/images/AAAABRZbex0pOjoiGVgk4LiVlyL9Np07h0sXpWiThMa8MJGonhFusUamMSJInGf5Ng9Eqa4Hk-O267AsyS8unvY7Mg7IblvzyIf4.webp",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/images/boss_baby.webp"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABRZbex0pOjoiGVgk4LiVlyL9Np07h0sXpWiThMa8MJGonhFusUamMSJInGf5Ng9Eqa4Hk-O267AsyS8unvY7Mg7IblvzyIf4.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/boss_baby.webp"
 ]
 
 # [ 
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/images/AAAABShbycpQOxZmKd8o7rlwPDLO8t4CjQNZ5DySHwWqPhe8iNOy5y-kA8Fm9JcLrDcF17wRqeyyfPcg3NeCwSL-SzdjxCCyuOqS.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/images/incredibles.webP",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/images/AAAABTC2rctY_Az6QyVXWxLBLVTOxWGUHjxM9SY3Ft8f9TnYVnbN5KxU-rGhg_gFEUS9wUppFE8UPCjEn60peomsSwCcFhxyrsbC.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/images/AAAABds2s6wMUNGslsmulRn1JdcfjCQS797b0T7oZ8fdBfHynNdlSvTahotrFqmXJELhBHb-4hwiKfwZHel-f3XQ7iOudoAYZOgD.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/images/AAAABevscmjVm8HdEWfxeX1qroJHhqLS_oIky38U_VVQXt1vwinXiCGjltoCAQ7wot54pmc8BelX2cQhmTSiMNUTlvtzzD5dLPG5.webp",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABShbycpQOxZmKd8o7rlwPDLO8t4CjQNZ5DySHwWqPhe8iNOy5y-kA8Fm9JcLrDcF17wRqeyyfPcg3NeCwSL-SzdjxCCyuOqS.webp",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/incredibles.webP",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABTC2rctY_Az6QyVXWxLBLVTOxWGUHjxM9SY3Ft8f9TnYVnbN5KxU-rGhg_gFEUS9wUppFE8UPCjEn60peomsSwCcFhxyrsbC.webp",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABds2s6wMUNGslsmulRn1JdcfjCQS797b0T7oZ8fdBfHynNdlSvTahotrFqmXJELhBHb-4hwiKfwZHel-f3XQ7iOudoAYZOgD.webp",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABevscmjVm8HdEWfxeX1qroJHhqLS_oIky38U_VVQXt1vwinXiCGjltoCAQ7wot54pmc8BelX2cQhmTSiMNUTlvtzzD5dLPG5.webp",
 # ]
 
 ANIMATION_TRAILER = [
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/trailers/Bee+Movie+%E2%80%90+Made+with+Clipchamp.mp4",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/trailers/Boss+Baby+%E2%80%90+Made+with+Clipchamp+(5).mp4"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/Bee+Movie+%E2%80%90+Made+with+Clipchamp.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/Boss+Baby+%E2%80%90+Made+with+Clipchamp+(5).mp4"
 ]
 
-# [ "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/trailers/captain.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/trailers/incredibles.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/trailers/despicable.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/trailers/cars.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/animation/trailers/bolt.mp4",
+# [ "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/captain.mp4",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/incredibles.mp4",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/despicable.mp4",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/cars.mp4",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/bolt.mp4",
 # ]
 
 ANIMATION_VIDS = [
@@ -267,26 +268,26 @@ our_planet = Movie.create!({
 =end
 
 DOCUMENTARY_TRAILER = [
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/trailers/blue_planet.mp4",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/trailers/heroine.mp4"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/blue_planet.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/heroine.mp4"
   ]
-# [  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/trailers/unacknowledged.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/trailers/truth.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/trailers/WWII.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/trailers/planetEarth2.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/trailers/ourPlanet.mp4",
-]
+# [  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/unacknowledged.mp4",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/truth.mp4",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/WWII.mp4",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/planetEarth2.mp4",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/ourPlanet.mp4",
+# ]
 
 DOCUMENTARY_IMG = [
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/images/AAAABajGT2MoL4fKStjxz75yuSSNK6M2cbtbaVNVMhmMwfjlIZDfzAdpEmjrsMX1fPMII1R7A_kK3whOx4DaYEpijtuUWcOIEWLM.webp",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/images/AAAABRww2_-O8j7P6xoW1vpeeplXOOT-g4P9pXT2lUF6-guHKMfsaYJOWM2h1U60ovBiJ6OlBAnfEIsdPkWVtsUcCxAJB4hS0rYr.jpg"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABajGT2MoL4fKStjxz75yuSSNK6M2cbtbaVNVMhmMwfjlIZDfzAdpEmjrsMX1fPMII1R7A_kK3whOx4DaYEpijtuUWcOIEWLM.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABRww2_-O8j7P6xoW1vpeeplXOOT-g4P9pXT2lUF6-guHKMfsaYJOWM2h1U60ovBiJ6OlBAnfEIsdPkWVtsUcCxAJB4hS0rYr.jpg"
   ]
-# [  "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/images/AAAABWLBdZQMS65Zlac17UmTGmqSEq_HlPF4lVaP_9pWj0nnqd50SwQLYkIgXndm3wt5YVhTL7IVcmV5sQymWlkc6FRwsWJ7_js4.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/images/AAAABXFgiOjpVyJ7ULaRsl4_fqWMegeu3Xqb_fM0V8pcwGORVMTnrmZBb9V7qNUrBMZKoq4J7j5lWxid2QHiTMQcQxmtY55P-O1D.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/images/AAAABYJPX0EF7m41U-D3mA2sRleOWzqdMhyvnvnNlFe4HHbfkU1aJ6CfVT_kI3Tqr-KsvoE_ACXDLgWQnZHI8IAJCvAHdPCCardU.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/images/AAAABZ7AbREqDVaFUKW54zr7EygA6SGX5wEq0MKyZtON3GjfOEtbpsUOJ8vD3aqhJnWUU-ziBqGxij2m3pdDXeAWLjxqX8dMaBtk.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movie-genres/documentary/images/our_planet.jpg",
-]
+# [  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABWLBdZQMS65Zlac17UmTGmqSEq_HlPF4lVaP_9pWj0nnqd50SwQLYkIgXndm3wt5YVhTL7IVcmV5sQymWlkc6FRwsWJ7_js4.webp",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABXFgiOjpVyJ7ULaRsl4_fqWMegeu3Xqb_fM0V8pcwGORVMTnrmZBb9V7qNUrBMZKoq4J7j5lWxid2QHiTMQcQxmtY55P-O1D.webp",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABYJPX0EF7m41U-D3mA2sRleOWzqdMhyvnvnNlFe4HHbfkU1aJ6CfVT_kI3Tqr-KsvoE_ACXDLgWQnZHI8IAJCvAHdPCCardU.webp",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABZ7AbREqDVaFUKW54zr7EygA6SGX5wEq0MKyZtON3GjfOEtbpsUOJ8vD3aqhJnWUU-ziBqGxij2m3pdDXeAWLjxqX8dMaBtk.webp",
+#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/our_planet.jpg",
+# ]
 
 DOCUMENTARY_VID = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/blue-planet-movie.mp4",
