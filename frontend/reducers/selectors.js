@@ -10,11 +10,11 @@
 //   });  
 // };
 
-export const allMoviesByGenre = (genres, movies, movieGenres) => {
-  return Object.values(movieGenres).map(movieGenre => {
-    let moviesInGenres = {};
-    moviesInGenres[genres[movieGenre.genreId].name] = movies[movieGenre.movieId];
-    return moviesInGenres;
-  });
-};
+// export const allMoviesByGenre = (genres, movies, movieGenres) => {
+//   return Object.values(movieGenres).map(movieGenre => {
+//     let moviesInGenres = {};
+//     moviesInGenres[genres[movieGenre.genreId].name] = movies[movieGenre.movieId];
+//     return moviesInGenres;
+//   });
+// };
 

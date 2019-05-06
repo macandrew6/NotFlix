@@ -25,13 +25,16 @@ class Browse extends React.Component {
   // }
 
   render() {
-    const { logout, movies, moviesByGenre } = this.props;
-
-    console.log(moviesByGenre);
+    const { logout, movies, genres } = this.props;
+    
     return (
       <div className="browse-container">
         <NavBarContainer />
-        <BrowseIndexItem />
+        {genres.forEach(genre => {
+          genre.movieIds.map(id => (
+            <BrowseIndexItem key={genre.id} movies={movies[id]} genre={genre} />
+          ));
+        })};
       </div>
     );
   }
