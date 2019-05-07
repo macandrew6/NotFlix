@@ -1,9 +1,21 @@
 import React from 'react';
 import MovieThumbnail from '../movie_components/movieThumbnail';
 
-class BrowseIndexItem extends React.Component {
+class GenreLists extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state= {
+    };
+  }
+
+  componentDidMount() {
+  }
+
   render() {
     const { movies, genre } = this.props;
+    console.log(movies);
+
     return (
       <div className="potential-slider-function's-css">
         <h2 style={{background: "white"}}>{genre.name}</h2>
@@ -26,4 +38,4 @@ class BrowseIndexItem extends React.Component {
 // />;
 
 
-export default BrowseIndexItem;
+export default GenreLists;

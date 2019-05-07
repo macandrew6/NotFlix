@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar_components/nav_bar_container.js';
-import BrowseIndexItem from './browse_index_item';
+import GenreListsContainer from '../genre_components/genre_lists_container';
 
 class Browse extends React.Component {
   constructor(props) {
@@ -20,15 +20,14 @@ class Browse extends React.Component {
   // }
 
   render() {
-    const { movies, genres } = this.props;
+    const { movies, genres, fetchMovies } = this.props;
     return (
       <div className="browse-container">
         <NavBarContainer />
         {
           genres.map((genre) => (
-            <BrowseIndexItem 
+            <GenreListsContainer 
               genre={genre} 
-              movies={movies}
               key={genre.id}
             />
           ))

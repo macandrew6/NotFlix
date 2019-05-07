@@ -8,7 +8,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route.js';
 import SplashPage from './splash_page';
 import SignupFormContainer from './session_form/signup_container';
 import LoginFormContainer from './session_form/login_container';
-import NavBarContainer from './browse/nav_bar_components/nav_bar_container.js';
 import BrowseContainer from './browse/browse_components/browse_container.js';
 import MovieWatch from './browse/movie_components/movie_watch_container';
 
