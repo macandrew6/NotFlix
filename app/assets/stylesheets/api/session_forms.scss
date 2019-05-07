@@ -1,10 +1,18 @@
+
 .session-page {
-  display: inline-block;
-  width: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0, 0),
+    rgba(0,0,0, 100)
+    ),url('https://assets.nflxext.com/ffe/siteui/vlv3/02dd3f21-2c34-4989-a48b-827dd9edc446/458a6a8c-98f1-4e27-9b78-1232d80d5c04/US-en-20190422-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  position: absolute;
+  background-position: bottom;
   height: 100%;
-  background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/02dd3f21-2c34-4989-a48b-827dd9edc446/458a6a8c-98f1-4e27-9b78-1232d80d5c04/US-en-20190422-popsignuptwoweeks-perspective_alpha_website_large.jpg');
-  background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 0.048) 0%,rgba(0, 0, 0, 0.966) 70%);
-  background-position: top right no-repeat;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
 }
 
 .session-page .demo-btn {
@@ -14,7 +22,10 @@
   margin: 10px 30px 10px 10px;
   border-radius: 3px;
   background: #1e88eb;
-  color: rgb(14, 1, 1);
+  -webkit-animation-name: bluePulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  color: white;
   border: none;
   font-size: 30px;
   font-family: 'Indie Flower', cursive;
@@ -33,19 +44,19 @@
 .session-form-container {
   position: relative;
   background-color: rgba(0,0,0,.75);
-  padding: 45px;
-  width: 370px;
-  height: 509px;
+  padding: 38px;
+  width: 282px;
+  height: 508px;
   margin: 0 auto;
-  margin-top: 160px;
+  margin-top: 100px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-title {
-  font-size: 43px;
+  font-size: 28px;
   font-weight: 900;
   margin-top: 26x;
-  margin-bottom: 52px;
+  margin-bottom: 82px;
   color: white;
 }
 
@@ -57,15 +68,15 @@
 }
 
 form input {
-  font-size: 21px;
+  font-size: 16px;
   background: rgb(51, 51, 51);
   border-radius: 4px;
   border: 0;
   color: #fff;
-  height: 41px;
-  margin-bottom: 30px;
-  width: 322px;
-  padding: 7px 27px 8px;
+  height: 33px;
+  margin-bottom: 29px;
+  width: 255px;
+  padding: 7px 22px 8px;
 }
 
 .submit-form-btn {
@@ -74,11 +85,11 @@ form input {
   line-height: normal;
   padding: 0px;
   font-weight: 400;
-  width: 379px;
-  height: 55px;
+  width: 300px;
+  height: 50px;
   border-radius: 3px;
   margin-top: 83px;
-  font-size: 21px;
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -95,3 +106,8 @@ form input {
   margin-bottom: 7px;
 }
 
+@-webkit-keyframes bluePulse {
+  from { background-color: #135797; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #1e88eb;; -webkit-box-shadow: 0 0 18px #e0e0ff8e; }
+  to { background-color: #1d68af; -webkit-box-shadow: 0 0 9px rgb(77, 77, 77); }
+}

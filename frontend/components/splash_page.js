@@ -15,6 +15,9 @@ const SplashPage = () => {
           className="signup-btn" 
           to="/signup">Sign Up</Link>
       </div>
+      <div className="tin-container"></div>
+      <div className="tin-module"></div>
+      <footer className="splash-footer"></footer>
     </div>
   );
 };

@@ -13,7 +13,7 @@ import BrowseContainer from './browse/browse_components/browse_container.js';
 import MovieWatch from './browse/movie_components/movie_watch_container';
 
 const App = () => (
-  <header>
+  <div className="body">
     <Switch>
       <Route exact path="/" component={SplashPage} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -22,7 +22,7 @@ const App = () => (
       <ProtectedRoute path="/browse/watch/:movieId" component={MovieWatch} />
       <Redirect to="/" />
     </Switch>
-  </header>
+  </div>
 );
 
 
