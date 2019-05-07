@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar_components/nav_bar_container.js';
 import BrowseIndexItem from './browse_index_item';
 
@@ -10,11 +9,8 @@ class Browse extends React.Component {
 
   componentDidMount() {
     this.props.fetchGenres();
-    this.props.fetchMovieGenres();
     this.props.fetchMovies();
   }
-
-
 
   // add scroll even listener or research onScroll react handler
   // window.addEventListener('scroll', this.handleScroll);

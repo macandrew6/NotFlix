@@ -1,9 +1,9 @@
 .session-page {
   display: inline-block;
-  width: 100vw;
-  height: 150vh;
+  width: 100%;
+  height: 100%;
   background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/02dd3f21-2c34-4989-a48b-827dd9edc446/458a6a8c-98f1-4e27-9b78-1232d80d5c04/US-en-20190422-popsignuptwoweeks-perspective_alpha_website_large.jpg');
-  background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 0.048) 0%,rgba(0, 0, 0, 0.966) 100%);
+  background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 0.048) 0%,rgba(0, 0, 0, 0.966) 70%);
   background-position: top right no-repeat;
 }
 

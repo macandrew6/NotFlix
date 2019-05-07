@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { logout } from '../../../actions/session';
 import { fetchMovies } from '../../../actions/movies'; 
 import { fetchGenres } from '../../../actions/genres'; 
-import { fetchAllMovieGenres } from '../../../actions/movie_genres';
 
 import Browse from './browse';
 
@@ -14,7 +13,6 @@ const mapStateToProps = ({entities: { movies, genres, movieGenres }}) => ({
 const mapDispatchToProps = dispatch => ({
   fetchGenres: () => dispatch(fetchGenres()),
   fetchMovies: () => dispatch(fetchMovies()),
-  fetchMovieGenres: () => dispatch(fetchAllMovieGenres()),
   logout: () => dispatch(logout())
 });
 

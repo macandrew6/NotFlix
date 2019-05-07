@@ -1,5 +1,4 @@
 import React from 'react';
-import MovieShowDetails from './movie_show_details';
 import { Link } from 'react-router-dom';
 import { Player, ControlBar } from 'video-react';
 
@@ -34,9 +33,6 @@ class MovieThumbnail extends React.Component {
   
   componentDidMount() {
     this.player.subscribeToStateChange(this.handleStateChange);
-  }
-
-  componentDidUpdate() {
   }
 
   handleStateChange(state, prevState) {
@@ -92,7 +88,7 @@ class MovieThumbnail extends React.Component {
     });
     setTimeout(() => {
       this.play();
-    }, 100);
+    }, 300);
   }
 
   handleMouseLeave(e) {
@@ -139,7 +135,7 @@ class MovieThumbnail extends React.Component {
             ref={(p) => {
               this.player = p;
             }}
-            autoplay={autoplay}
+            autoPlay={autoplay}
             fluid={false}
             poster={movie.imageUrl}
             src={source}

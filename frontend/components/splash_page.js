@@ -5,13 +5,8 @@ const SplashPage = () => {
   return (
     <div className="splash-page" >
       <header>
-        <Link 
-          to="/"
-          className="logo">
-        </Link>
-        <Link
-          className="login-btn"
-          to="/login">Sign In</Link>
+        <Link to="/" className="logo"></Link>
+        <Link className="login-btn" to="/login">Sign In</Link>
       </header>
       <div className="content-container">
         <h2>See what's next.</h2>
