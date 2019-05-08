@@ -76,7 +76,7 @@ bolt = Movie.create!({
   rating: "PG",
   content_length: "1h 38m"
 })
-=end
+
 ANIMATION_IMG = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABRZbex0pOjoiGVgk4LiVlyL9Np07h0sXpWiThMa8MJGonhFusUamMSJInGf5Ng9Eqa4Hk-O267AsyS8unvY7Mg7IblvzyIf4.webp",
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/boss_baby.webp",
@@ -89,7 +89,7 @@ ANIMATION_IMG = [
 
 ANIMATION_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/Bee+Movie+%E2%80%90+Made+with+Clipchamp.mp4",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/Boss+Baby+%E2%80%90+Made+with+Clipchamp+(5).mp4"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/Boss+Baby+%E2%80%90+Made+with+Clipchamp+(5).mp4",
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/captain.mp4",
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/incredibles.mp4",
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/despicable.mp4",
@@ -268,9 +268,9 @@ our_planet = Movie.create!({
 
 DOCUMENTARY_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/blue_planet.mp4",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/heroine.mp4"
-  ]
-# [  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/unacknowledged.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/heroine.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/unacknowledged.mp4"
+]
 #   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/truth.mp4",
 #   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/WWII.mp4",
 #   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/planetEarth2.mp4",

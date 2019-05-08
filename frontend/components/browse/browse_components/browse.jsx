@@ -23,7 +23,7 @@ class Browse extends React.Component {
     const { movies, genres, fetchMovies } = this.props;
     return (
       <div className="browse-container">
-        <NavBarContainer />
+        <NavBarContainer movies={movies}/>
         <div className="genre-lists">
           <div className="init-video"> IMMA BE A VIDEO </div>
             {

@@ -23,6 +23,7 @@ class MovieWatch extends React.Component {
         
         <video 
           src={this.props.movie.movieUrl} 
+          loop={true}
           width="100%" 
           height="auto"
           autoplay="autoplay"
