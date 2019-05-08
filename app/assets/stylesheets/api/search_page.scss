@@ -1,21 +1,51 @@
-.search-page {
+.search-page-container {
+  display: flex;
   top: 55px;
   left: 0;
   right: 0;
-  /* bottom: 0; */
-  z-index: 99999;
-  background-color: cornflowerblue;
+  background-color: #141414;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   position: absolute;
 }
 
-.page {
+.search-page {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   top: 35px;
   position: absolute;
   width:100%;
-  height: 100%;
   font-size: 90px;
 }
 
+.search-page .movie-thumbnail-slide {
+  position: relative;
+  display: flex;
+  margin: 2px;
+  width: 320px;
+  height: 183px;
+  transition: all .4s ease-in-out; 
+}
+
+.search-page .movie-thumbnail-slide:hover {
+  width: 402px;
+  height:230px;
+}
+
+.movie-thumbnail-slide .toggle-thumbnail-sound {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  opacity: 0.4;
+  height: 30px;
+  width: 30px;
+  right: 11px;
+  bottom: 20px;
+  z-index: 1;
+  color: white;
+  font-size: 27px;
+}
 

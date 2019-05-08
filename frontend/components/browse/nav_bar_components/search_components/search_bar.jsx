@@ -1,8 +1,7 @@
 import React from 'react';
 import SearchPage from './search_page';
-import { withRouter } from 'react-router-dom';
 import { AuthRoute } from '../../../../util/route.js';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -44,7 +43,6 @@ class SearchBar extends React.Component {
     if(!filteredMovies) {
       return null;
     }
-    console.log("filtered movies in render",filteredMovies);
 
     return (
       <div>
@@ -56,13 +54,8 @@ class SearchBar extends React.Component {
           onChange={this.handleSearchChange}  
         />
         <div>
-          {this.state.filteredMovies.length > 0 ? 
-            <Route 
-              exact
-              to="search" 
-              component={SearchPage} 
-              filteredMovies={filteredMovies}
-            /> : 
+          {filteredMovies.length > 0 ? 
+            <SearchPage filteredMovies={filteredMovies} /> : 
             null
           }
         </div>
@@ -72,4 +65,4 @@ class SearchBar extends React.Component {
 }
 
 
-export default withRouter(SearchBar);
+export default SearchBar;
