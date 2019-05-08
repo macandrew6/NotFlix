@@ -1,0 +1,73 @@
+.browse-container {
+  background: #141414;
+  width: 100vw;
+  height: 100%;
+}
+
+.genre-lists {
+  display: flex;
+  flex-direction: column;
+}
+
+.init-video {
+  color: white;
+  font-size: 48px;
+  width: 100%;
+  height: 500px;
+  flex: 2;
+}
+
+.genre-title {
+  height: 20px;
+  width: 100px;
+  font-size: 30px;
+  color: white;
+  justify-content: left;
+  text-transform: capitalize;
+  font-family: 'Wallpoet', cursive;
+  margin: 30px 0px;
+}
+
+.back-arrow-btn {
+  color: white;
+  width: 30px;
+  left: 0px;
+  margin-left: 0px;
+  padding: 75px 3px 75px;
+  opacity: 0.1;
+  background-color: grey;
+  position: absolute;
+  z-index: 1;
+}
+
+.back-arrow-btn:hover {
+  -webkit-animation-name: whitePulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.next-arrow-btn {
+  color: white;
+  width: 30px;
+  right: 0px;
+  margin-right: 0px;
+  padding: 75px 3px 75px;
+  opacity: 0.1;
+  background-color: grey;
+  position: absolute;
+  z-index: 1;
+}
+
+.next-arrow-btn:hover {
+  -webkit-animation-name: whitePulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+
+
+@-webkit-keyframes whitePulse {
+  from { background-color: #181717; opacity: 0.6; color: white; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #746a6a; opacity: 0.6; color: white; -webkit-box-shadow: 0 0 18px #f8f8f8; }
+  to { background-color: #2b2828; opacity: 0.6; color: white;  -webkit-box-shadow: 0 0 9px #333; }
+}

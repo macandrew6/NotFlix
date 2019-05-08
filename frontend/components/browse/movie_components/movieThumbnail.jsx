@@ -10,8 +10,8 @@ class MovieThumbnail extends React.Component {
       movie: this.props.movie.movieUrl
     };
     this.state = {
-      height: 130,
-      width: 229,
+      height: 185,
+      width: 322,
       source: this.sources.trailer,
       autoplay: false,
       toggleControls: false,
@@ -28,7 +28,6 @@ class MovieThumbnail extends React.Component {
     this.toggleSound = this.toggleSound.bind(this);
     this.openShowPage = this.openShowPage.bind(this);
     this.closeShowPage = this.closeShowPage.bind(this);
-    // this.handleFullScreenChange = this.handleFullScreenChange.bind(this); figure this out
   }
   
   componentDidMount() {
@@ -62,29 +61,12 @@ class MovieThumbnail extends React.Component {
       }
     };
   }
-
-  changeSource() {
-    return () => {
-      console.log(this.props.movie.movieUrl);
-      this.setState({
-        source: this.sources.movie,
-        width: null,
-        height: null,
-        autoplay: !this.state.autoplay,
-        toggleControls: !this.state.toggleControls
-      });
-      setTimeout(() => {
-        this.player.toggleFullscreen();
-        this.play();
-      }, 300);
-    };
-  }
   
   handleMouseEnter(e) {
     e.preventDefault();
     this.setState({
-      height: 200,
-      width: 370
+      height: 230,
+      width: 402
     });
     setTimeout(() => {
       this.play();
@@ -94,13 +76,13 @@ class MovieThumbnail extends React.Component {
   handleMouseLeave(e) {
     e.preventDefault();
     this.setState({
-      height:130,
-      width: 229
+      height: 185,
+      width: 322,
     });
     setTimeout(() => {
       this.pause();
       this.load();
-    }, 300);
+    }, 400);
   }
 
   openShowPage(e) {
@@ -126,7 +108,7 @@ class MovieThumbnail extends React.Component {
 
     return (
       <div 
-        className="temp-single-movie-thumbnail-container"
+        className="movie-thumbnail-slide"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         >
@@ -144,13 +126,13 @@ class MovieThumbnail extends React.Component {
           >
           </Player>
         </Link>
-        <button onClick={this.toggleSound(false)}>sound</button>
-        <button onClick={this.changeSource()}>play</button>
+        <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
+          <i className="fas fa-volume-up"></i>
+        </div>
       </div>
     );
   }
 }
 
-// onstart render a button that controls volume and a place holder button for adding movie to list
 
 export default MovieThumbnail;

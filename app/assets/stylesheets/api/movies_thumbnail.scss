@@ -1,40 +1,47 @@
 @import 'video-react/styles/scss/video-react';
 
-.browse-container {
-  background: #141414;
-  width: 100vw;
-  height: 200vh;
-}
-
-.movie-thumbnail-lists-container {
-
-}
-
-.temp-all-movie-thumbnails-container {
+.movie-thumbnail-slider {
   display: flex;
-  flex-flow: wrap;
+  flex-direction: row;
   align-items: center;
-  padding: 2px 30px 10px;
+}
+
+.movie-thumbnail-slide-container {
+  display: flex;
+  align-items: center;
+  padding: 0px 30px 0px;
   width: 100vw;
   height: 200px;
 }
-
-// .temp-single-movie-thumbnail-container {
-//   position: relative;
-//   border: 1.5px solid #141414;
-//   margin-right: 3px;
-//   box-sizing: border-box;
-//   width: 229px;
+// cool css trick
 //   transition: all .4s ease-in-out; 
-// }
+.movie-thumbnail-slide {
+  display: flex;
+  margin: 2px;
+  position: relative;
+}
 
-// .temp-single-movie-thumbnail-container:hover {
-//   position: relative;
-//   margin-right: 3px;
-//   box-sizing: border-box;
-//   max-height: 200px;
-//   max-width: 370px;
-// }
+.toggle-thumbnail-sound {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  opacity: 0.4;
+  height: 26px;
+  width: 30px;
+  right: 12px;
+  bottom: 10px;
+  z-index: 1;
+  color: white;
+}
+
+.toggle-thumbnail-sound:hover {
+  
+  -webkit-animation-name: whitePulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
 
 .video-react .video-react-control-bar {
   display: none;
@@ -48,3 +55,8 @@
   display: none;
 }
 
+@-webkit-keyframes whitePulse {
+  from { background-color: #181717; opacity: 0.8; color: white; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #746a6a; opacity: 0.8; color: white; -webkit-box-shadow: 0 0 18px #f8f8f8; }
+  to { background-color: #2b2828; opacity: 0.8; color: white;  -webkit-box-shadow: 0 0 9px #333; }
+}

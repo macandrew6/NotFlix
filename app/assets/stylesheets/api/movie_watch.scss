@@ -1,11 +1,17 @@
-.full-screen-video-player {
-  background-color: #141414;
-  width: 100%;
+.body {
   height: 100%;
+}
+
+.full-screen-video-player {
+  display: flex;
+  height: 100vh;
+  background-color: #141414;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
 .movie-watch-back-btn {
   position: absolute;
+  top:0;
+  z-index: 1;
 }

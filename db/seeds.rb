@@ -46,7 +46,6 @@ boss_baby = Movie.create!({
   rating: 'PG',
   content_length: '1h 37m'
 })
-=begin
 captain = Movie.create!({
   title: "Captain Underpants",
   description: "Fourth-grade pranksters George and Harold hypnotize their humorless principal into thinking he's an undies-adorned superhero.",
@@ -80,28 +79,23 @@ bolt = Movie.create!({
 =end
 ANIMATION_IMG = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABRZbex0pOjoiGVgk4LiVlyL9Np07h0sXpWiThMa8MJGonhFusUamMSJInGf5Ng9Eqa4Hk-O267AsyS8unvY7Mg7IblvzyIf4.webp",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/boss_baby.webp"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/boss_baby.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABShbycpQOxZmKd8o7rlwPDLO8t4CjQNZ5DySHwWqPhe8iNOy5y-kA8Fm9JcLrDcF17wRqeyyfPcg3NeCwSL-SzdjxCCyuOqS.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/incredibles.webP",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABTC2rctY_Az6QyVXWxLBLVTOxWGUHjxM9SY3Ft8f9TnYVnbN5KxU-rGhg_gFEUS9wUppFE8UPCjEn60peomsSwCcFhxyrsbC.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABds2s6wMUNGslsmulRn1JdcfjCQS797b0T7oZ8fdBfHynNdlSvTahotrFqmXJELhBHb-4hwiKfwZHel-f3XQ7iOudoAYZOgD.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABevscmjVm8HdEWfxeX1qroJHhqLS_oIky38U_VVQXt1vwinXiCGjltoCAQ7wot54pmc8BelX2cQhmTSiMNUTlvtzzD5dLPG5.webp",
 ]
-
-# [ 
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABShbycpQOxZmKd8o7rlwPDLO8t4CjQNZ5DySHwWqPhe8iNOy5y-kA8Fm9JcLrDcF17wRqeyyfPcg3NeCwSL-SzdjxCCyuOqS.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/incredibles.webP",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABTC2rctY_Az6QyVXWxLBLVTOxWGUHjxM9SY3Ft8f9TnYVnbN5KxU-rGhg_gFEUS9wUppFE8UPCjEn60peomsSwCcFhxyrsbC.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABds2s6wMUNGslsmulRn1JdcfjCQS797b0T7oZ8fdBfHynNdlSvTahotrFqmXJELhBHb-4hwiKfwZHel-f3XQ7iOudoAYZOgD.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/images/AAAABevscmjVm8HdEWfxeX1qroJHhqLS_oIky38U_VVQXt1vwinXiCGjltoCAQ7wot54pmc8BelX2cQhmTSiMNUTlvtzzD5dLPG5.webp",
-# ]
 
 ANIMATION_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/Bee+Movie+%E2%80%90+Made+with+Clipchamp.mp4",
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/Boss+Baby+%E2%80%90+Made+with+Clipchamp+(5).mp4"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/captain.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/incredibles.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/despicable.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/cars.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/bolt.mp4",
 ]
-
-# [ "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/captain.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/incredibles.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/despicable.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/cars.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/trailers/bolt.mp4",
-# ]
 
 ANIMATION_VIDS = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/bee-movie.mp4",

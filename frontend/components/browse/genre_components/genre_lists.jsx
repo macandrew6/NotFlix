@@ -1,41 +1,84 @@
 import React from 'react';
 import MovieThumbnail from '../movie_components/movieThumbnail';
+import LeftArrow from './left_arrow';
+import RightArrow from './right_arrow';
 
 class GenreLists extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state= {
+    
+    this.state = {
+      moviesInGenre: this.props.moviesInGenre,
+      currentIndex: 0,
+      translateValue: 0
     };
+
+    this.goToPrevVideo = this.goToPrevVideo.bind(this);
+    this.goToNextVideo = this.goToNextVideo.bind(this);
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.moviesInGenre !== this.props.moviesInGenre) {
+      let moviesInGenre = prevProps.moviesInGenre;
+      this.setState({ moviesInGenre: moviesInGenre });
+    }
+  }
+
+  goToNextVideo() {
+    this.setState(() => {
+      return {
+        currentIndex: this.state.currentIndex + 1,
+        translateValue: this.state.translateValue - (this.slideWidth())
+      };
+    });
+  }
+
+  goToPrevVideo() {
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex - 1,
+      translateValue: prevState.translateValue + (this.slideWidth())
+    }));
+  }
+
+  slideWidth() {
+    return document.querySelector('.movie-thumbnail-slide').clientWidth;
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.moviesInGenre !== prevState.moviesInGenre) {
+      return { moviesInGenre: nextProps.moviesInGenre};
+    } else {
+      return null;
+    }
   }
 
   render() {
-    const { movies, genre } = this.props;
-    console.log(movies);
-
+    const { genre } = this.props;
+    const { moviesInGenre } = this.state;
     return (
-      <div className="potential-slider-function's-css">
-        <h2 style={{background: "white"}}>{genre.name}</h2>
-        <div className="movie-thumbnail-lists-container" style={{background: "cornflowerblue", border: "1px solid red"}}>
-          <div className="temp-all-movie-thumbnails-container">
-            {
-              movies.filter(movie => genre.movieIds.includes(movie.id)).map(movie => (
-                <MovieThumbnail key={movie.id} movie={movie} />
-              ))
-            }
+      <div className="genre-lists-container">
+        
+        <h2 className="genre-title">{genre.name}</h2>
+        <div className="movie-thumbnail-slider">
+          <LeftArrow goToPrevVideo={this.goToPrevVideo}/>
+          <div 
+            className="movie-thumbnail-slide-container"
+            style={{
+              transform: `translateX(${this.state.translateValue}px)`,
+              transition: 'transform ease-out 0.90s'
+            }}>
+              {
+                this.state.moviesInGenre.map(movie => (
+                  <MovieThumbnail key={movie.id} movie={movie} />
+                ))
+              }
           </div>
+          <RightArrow goToNextVideo={this.goToNextVideo}/>
         </div>
       </div>
+
     );
   }
 }
-
-// return <MovieThumbnail
-//   movie={movies[id]}
-// />;
-
 
 export default GenreLists;

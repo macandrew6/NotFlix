@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :movies, only: [:index, :show]
     resources :genres, only: [:index, :show]
     resources :movie_genres, only: [:index]
+    resources :user_movies, only: [:create, :destroy]
   end
   
   root to: "static_pages#root"

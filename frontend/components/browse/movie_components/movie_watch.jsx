@@ -20,6 +20,7 @@ class MovieWatch extends React.Component {
         <Link to='/browse'>
           <button className="movie-watch-back-btn">back</button>
         </Link>
+        
         <video 
           src={this.props.movie.movieUrl} 
           width="100%" 

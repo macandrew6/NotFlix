@@ -9,16 +9,39 @@
 }
 
 .nav-bar-logo {
+  position: absolute;
   background-image: url('https://fontmeme.com/permalink/190501/477ca523174a4729965a1e0179125ec3.png');
   background-size: contain;
   max-width: 123px;
   width: 400px;
   height: 46px;
-  position: absolute;
   top: 7px;
   left: 26px;
 }
 
-.nav-bar-container button {
-  margin-right: 10px
+.nav-2 {
+  display: flex;
+  line-height: 0px;
+  color: grey;
+}
+
+.nav-2 p {
+  margin: 12px;
+}
+
+.nav-2 span {
+  color: gold;
+}
+
+.logout-btn {
+  position: relative;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  margin-right: 13px;
+  padding: 5px 10px;
+  font-weight: 200;
+  border-radius: 2px;
+  font-size: 10px;
+  text-decoration: none;
 }

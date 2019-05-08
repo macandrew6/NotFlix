@@ -1,12 +1,19 @@
 import { connect } from 'react-redux';
 import GenreLists from './genre_lists';
+import { fetchMovies } from '../../../actions/movies.js';
 
 const mapStateToProps = ({entities: { movies }}, ownProps) => ({
-  movies: Object.keys(movies).map(id => movies[id]),
-  genre: ownProps.genre
+  genre: ownProps.genre,
+  moviesInGenre: Object.values(ownProps.movies)
+    .filter(movie => ownProps.genre.movieIds.includes(movie.id))
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchMovies: () => dispatch(fetchMovies())
 });
 
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  null
 )(GenreLists);

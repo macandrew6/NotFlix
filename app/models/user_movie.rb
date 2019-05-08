@@ -1,0 +1,2 @@
+class UserMovie < ApplicationRecord
+end

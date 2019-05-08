@@ -24,14 +24,18 @@ class Browse extends React.Component {
     return (
       <div className="browse-container">
         <NavBarContainer />
-        {
-          genres.map((genre) => (
-            <GenreListsContainer 
-              genre={genre} 
-              key={genre.id}
-            />
-          ))
-        };
+        <div className="genre-lists">
+          <div className="init-video"> IMMA BE A VIDEO </div>
+            {
+              genres.map((genre) => (
+                <GenreListsContainer 
+                  genre={genre} 
+                  movies={movies}
+                  key={genre.id}
+                />
+              ))
+            };
+        </div>
       </div>
     );
   }
