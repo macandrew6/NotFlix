@@ -99,11 +99,16 @@ ANIMATION_TRAILER = [
 
 ANIMATION_VIDS = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/bee-movie.mp4",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/boss-baby-movie.mp4"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/boss-baby-movie.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/captian.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/Incredibles.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/despicable-movie.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/Cars.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/animation/videos/bolt.mp4"
 ]
 
 
-ANIMATION_MOVIE_DATA = [bee, boss_baby] #, captain, incredibles, despicable, cars, bolt]
+ANIMATION_MOVIE_DATA = [bee, boss_baby, captain, incredibles, despicable, cars, bolt]
 
 
 ANIMATION_MOVIE_DATA.each_with_index do |movie_data, i|
