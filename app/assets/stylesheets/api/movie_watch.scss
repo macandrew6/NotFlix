@@ -10,9 +10,31 @@
   align-items: center;
 }
 
+.control-video-div {
+  position: relative;
+}
+
 .movie-watch-back-btn {
   position: absolute;
-  color: white;
-  top: 0;
+  color: antiquewhite;
+  opacity: .1;
+  font-size: 40px;
+  top: 40px;
+  left: 40px;
+  border-radius: 100%;
   z-index: 1;
+}
+
+.movie-watch-back-btn:hover {
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: whitePulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+
+@-webkit-keyframes whitePulse {
+  from { border-radius: 20px; background-color: #181717; opacity: 0.6; color: white; -webkit-box-shadow: 0 0 9px #333; }
+  50% { border-radius: 20px; background-color: #746a6a; opacity: 0.6; color: white; -webkit-box-shadow: 0 0 18px #f8f8f8; }
+  to { border-radius: 20px; background-color: #2b2828; opacity: 0.6; color: white;  -webkit-box-shadow: 0 0 9px #333; }
 }
