@@ -7,6 +7,9 @@ const NavBar = ({ logout, user, movies, fetchMovies }) => {
     <header className="nav-bar-container">
       <nav className="nav-1">
         <Link to="/browse" className="nav-bar-logo"></Link>
+        <Link to="/browse" className="home-btn">Home</Link>
+        <Link to="/browse" className="movies-btn">Movies</Link>
+        <Link to="/browse/my-list" className="my-list-btn" movies={movies}>My List</Link>
       </nav>
       <nav className="nav-2">
         <SearchBar movies={movies} fetchMovies={fetchMovies} />

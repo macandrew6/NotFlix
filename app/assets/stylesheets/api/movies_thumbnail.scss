@@ -11,7 +11,7 @@
   align-items: center;
   padding: 0px 30px 0px;
   width: 100vw;
-  height: 200px;
+  height: 240px;
 }
 // cool css trick
 //   transition: all .4s ease-in-out; 
@@ -21,8 +21,75 @@
   position: relative;
 }
 
+.back-arrow-btn {
+  color: white;
+  width: 30px;
+  left: 0px;
+  margin-left: 0px;
+  padding: 75px 3px 75px;
+  opacity: 0.3;
+  background-color: grey;
+  position: absolute;
+  z-index: 1;
+}
+
+.back-arrow-btn:hover {
+  -webkit-animation-name: whitePulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.next-arrow-btn {
+  color: white;
+  width: 30px;
+  right: 0px;
+  margin-right: 0px;
+  padding: 75px 3px 75px;
+  opacity: 0.3;
+  background-color: grey;
+  position: absolute;
+  z-index: 1;
+}
+
+.next-arrow-btn:hover {
+  -webkit-animation-name: whitePulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+
+
+@-webkit-keyframes whitePulse {
+  from { background-color: #181717; opacity: 0.6; color: white; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #746a6a; opacity: 0.6; color: white; -webkit-box-shadow: 0 0 18px #f8f8f8; }
+  to { background-color: #2b2828; opacity: 0.6; color: white;  -webkit-box-shadow: 0 0 9px #333; }
+}
+
 .toggle-thumbnail-sound {
   position: absolute;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  opacity: 0.4;
+  height: 35px;
+  width: 39px;
+  right: 12px;
+  bottom: 10px;
+  z-index: 1;
+  color: white;
+}
+
+.toggle-thumbnail-sound:hover {
+  -webkit-animation-name: whitePulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.add-movie-btn {
+  position: absolute;
+  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,14 +98,14 @@
   height: 26px;
   width: 30px;
   right: 12px;
-  bottom: 10px;
+  bottom: 64px;
+  font-size: 28px;
   z-index: 1;
   color: white;
 }
 
-.toggle-thumbnail-sound:hover {
-  
-  -webkit-animation-name: whitePulse;
+.add-movie-btn:hover {
+  -webkit-animation-name: addPulse;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
 }
@@ -56,7 +123,12 @@
 }
 
 @-webkit-keyframes whitePulse {
-  from { background-color: #181717; opacity: 0.8; color: white; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #746a6a; opacity: 0.8; color: white; -webkit-box-shadow: 0 0 18px #f8f8f8; }
-  to { background-color: #2b2828; opacity: 0.8; color: white;  -webkit-box-shadow: 0 0 9px #333; }
+  from { background: none; opacity: 0.8; color: white; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background: none; opacity: 0.8; color: white; -webkit-box-shadow: 0 0 18px #f8f8f8; }
+  to { background: none; opacity: 0.8; color: white;  -webkit-box-shadow: 0 0 9px #333; }
+}
+@-webkit-keyframes addPulse {
+  from { background: none; opacity: 0.8; color: red; -webkit-box-shadow: 0 0 9px rgb(223, 107, 107); }
+  50% { background: none; opacity: 0.8; color: red; -webkit-box-shadow: 0 0 18px #f8f8f8; }
+  to { background: none; opacity: 0.8; color: red;  -webkit-box-shadow: 0 0 9px rgb(150, 135, 135); }
 }

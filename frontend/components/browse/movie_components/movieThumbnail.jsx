@@ -10,13 +10,13 @@ class MovieThumbnail extends React.Component {
       movie: this.props.movie.movieUrl
     };
     this.state = {
-      height: 185,
-      width: 322,
+      movieAddedToList: false,
+      height: 149,
+      width: 250,
       source: this.sources.trailer,
       autoplay: false,
+      showButtons: false,
       toggleControls: false,
-      show: false,
-      showClassName: "hide"
     };
   
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -26,8 +26,9 @@ class MovieThumbnail extends React.Component {
     this.pause = this.pause.bind(this);
     this.load = this.load.bind(this);
     this.toggleSound = this.toggleSound.bind(this);
-    this.openShowPage = this.openShowPage.bind(this);
-    this.closeShowPage = this.closeShowPage.bind(this);
+    this.handleAddMovie = this.handleAddMovie.bind(this);
+    // this.openShowPage = this.openShowPage.bind(this);
+    // this.closeShowPage = this.closeShowPage.bind(this);
   }
   
   componentDidMount() {
@@ -65,8 +66,9 @@ class MovieThumbnail extends React.Component {
   handleMouseEnter(e) {
     e.preventDefault();
     this.setState({
-      height: 230,
-      width: 402
+      height: 260,
+      width: 460,
+      showButtons: true
     });
     setTimeout(() => {
       this.play();
@@ -76,8 +78,9 @@ class MovieThumbnail extends React.Component {
   handleMouseLeave(e) {
     e.preventDefault();
     this.setState({
-      height: 185,
-      width: 322,
+      height: 149,
+      width: 250,
+      showButtons: false
     });
     setTimeout(() => {
       this.pause();
@@ -85,26 +88,31 @@ class MovieThumbnail extends React.Component {
     }, 400);
   }
 
-  openShowPage(e) {
+  handleAddMovie(e) {
     e.preventDefault();
-    this.setState({
-      show: true,
-      showClass: "show"
-    });
+    
   }
 
-  closeShowPage(e) {
-    e.preventDefault();
-    this.setState({
-      show: false,
-      showClass: "hide"
-    });
-  }
+  // openShowPage(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     show: true,
+  //     showClass: "show"
+  //   });
+  // }
+
+  // closeShowPage(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     show: false,
+  //     showClass: "hide"
+  //   });
+  // }
       
   render() {
 
     const { movie } = this.props;
-    const { width, height, source, autoplay } = this.state;
+    const { width, height, source, autoplay, showButtons } = this.state;
 
     return (
       <div 
@@ -126,9 +134,18 @@ class MovieThumbnail extends React.Component {
           >
           </Player>
         </Link>
-        <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
-          <i className="fas fa-volume-up"></i>
-        </div>
+        
+        {showButtons ? 
+          <div className="button-div">
+            <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
+              <i className="fas fa-volume-up"></i>
+            </div>
+            <div className="add-movie-btn" onClick={this.handleAddMovie}>
+              <i className="fas fa-plus"></i>
+            </div>
+          </div> : 
+          null
+        }
       </div>
     );
   }

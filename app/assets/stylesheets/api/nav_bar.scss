@@ -9,15 +9,22 @@
   height: 55px;
 }
 
+.nav-1 {
+  display: flex;
+  align-items: center;
+}
+
+.nav-1 a {
+  position: relative;
+  margin-left: 5px;
+}
+
 .nav-bar-logo {
-  position: absolute;
   background-image: url('https://fontmeme.com/permalink/190501/477ca523174a4729965a1e0179125ec3.png');
   background-size: contain;
   max-width: 123px;
   width: 400px;
   height: 46px;
-  top: 7px;
-  left: 26px;
 }
 
 .icon-div {

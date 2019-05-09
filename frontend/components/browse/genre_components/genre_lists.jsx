@@ -10,9 +10,11 @@ class GenreLists extends React.Component {
     this.state = {
       moviesInGenre: this.props.moviesInGenre,
       currentIndex: 0,
-      translateValue: 0
+      translateValue: 0,
+      showSliderButtons: false
     };
-
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.goToPrevVideo = this.goToPrevVideo.bind(this);
     this.goToNextVideo = this.goToNextVideo.bind(this);
   }
@@ -22,6 +24,20 @@ class GenreLists extends React.Component {
       let moviesInGenre = prevProps.moviesInGenre;
       this.setState({ moviesInGenre: moviesInGenre });
     }
+  }
+
+  handleMouseEnter(e) {
+    e.preventDefault();
+    this.setState({
+      showSliderButtons: true
+    });
+  }
+
+  handleMouseLeave(e) {
+    e.preventDefault();
+    this.setState({
+      showSliderButtons: false
+    });
   }
 
   goToNextVideo() {
@@ -58,14 +74,17 @@ class GenreLists extends React.Component {
 
   render() {
     const { genre } = this.props;
-    const { moviesInGenre } = this.state;
+    const { moviesInGenre, showSliderButtons } = this.state;
     console.log(this.state.currentIndex);
     return (
       <div className="genre-lists-container">
-        
         <h2 className="genre-title">{genre.name}</h2>
-        <div className="movie-thumbnail-slider">
-          <LeftArrow goToPrevVideo={this.goToPrevVideo}/>
+        <div 
+          className="movie-thumbnail-slider"
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+        >
+          {showSliderButtons ? <LeftArrow goToPrevVideo={this.goToPrevVideo}/> : null}
           <div 
             className="movie-thumbnail-slide-container"
             style={{
@@ -78,7 +97,7 @@ class GenreLists extends React.Component {
                 ))
               }
           </div>
-          <RightArrow goToNextVideo={this.goToNextVideo}/>
+          {showSliderButtons ? <RightArrow goToNextVideo={this.goToNextVideo} /> : null}
         </div>
       </div>
 

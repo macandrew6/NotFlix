@@ -3,9 +3,9 @@ import { logout } from '../../../actions/session';
 import { fetchMovies } from '../../../actions/movies';
 import NavBar from './nav_bar';
 
-const mapStateToProps = ({entities: {users}, session}, ownProps) => ({
+const mapStateToProps = ({entities: {users, movies}, session}, ownProps) => ({
   user: users[session["id"]],
-  movies: Object.values(ownProps.movies)
+  movies: Object.values(movies)
 });
 
 const mapDispatchToProps = dispatch => ({
