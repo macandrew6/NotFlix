@@ -4,10 +4,18 @@ import { Link } from 'react-router-dom';
 class MovieWatch extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleMouseMove = this.handleMouseMove.bind(this)
   }
   
   componentDidMount() {
     this.props.fetchMovie(this.props.match.params.movieId);
+  }
+
+  handleMouseMove(e) {
+    e.preventDefault();
+
+
   }
 
   render() {
@@ -16,9 +24,14 @@ class MovieWatch extends React.Component {
     }
     console.log(this.props);
     return (
-      <div className="full-screen-video-player">
+      <div 
+        className="full-screen-video-player"
+        onMouseMove={this.handleMouseMove}
+      >
         <Link to='/browse'>
-          <button className="movie-watch-back-btn">back</button>
+          <div className="movie-watch-back-btn">
+            <i className="fas fa-arrow-alt-circle-left"></i>
+          </div>
         </Link>
         
         <video 
@@ -29,7 +42,6 @@ class MovieWatch extends React.Component {
           autoplay="autoplay"
           controls
         />
-      
       </div>
     );
   }
