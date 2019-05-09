@@ -10,12 +10,15 @@
 }
 
 .search-page {
+  position: absolute;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
+  height: 700px;
   top: 35px;
-  position: absolute;
-  width:100%;
+  left: 30px;
+  right: 30px;
   font-size: 90px;
 }
 

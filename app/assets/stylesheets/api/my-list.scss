@@ -1,9 +1,13 @@
 .my-list-movies-container {
+  position: absolute;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  height: 270px;
-  width: 100%;
+  height: 700px;
+  left: 30px;
+  right: 30px;
+  font-size: 90px;
 }
 
 .my-list-page h2 {

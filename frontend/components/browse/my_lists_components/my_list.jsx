@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar_components/nav_bar_container.js';
-import MovieThumbnail from '../movie_components/movieThumbnail'
+import MovieThumbnail from '../movie_components/movieThumbnail';
 
 class MyList extends React.Component {
   constructor(props){

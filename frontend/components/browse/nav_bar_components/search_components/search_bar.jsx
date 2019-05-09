@@ -39,6 +39,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    let { user } = this.props;
     let { filteredMovies } = this.state;
     if(!filteredMovies) {
       return null;
@@ -58,7 +59,7 @@ class SearchBar extends React.Component {
         </div>
         <div>
           {filteredMovies.length > 0 ? 
-            <SearchPage filteredMovies={filteredMovies} /> : 
+            <SearchPage filteredMovies={filteredMovies} user={user} /> : 
             null
           }
         </div>

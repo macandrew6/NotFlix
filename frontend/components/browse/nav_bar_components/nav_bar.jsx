@@ -12,7 +12,7 @@ const NavBar = ({ logout, user, movies, fetchMovies }) => {
         <Link to="/browse/my-list" className="my-list-btn" movies={movies}>My List</Link>
       </nav>
       <nav className="nav-2">
-        <SearchBar movies={movies} fetchMovies={fetchMovies} />
+        <SearchBar movies={movies} fetchMovies={fetchMovies} user={user}/>
         <p>Hello <span>{user.email}</span></p>
         <button className="logout-btn" onClick={logout}>LOGOUT!</button>
       </nav>

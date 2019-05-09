@@ -99,6 +99,9 @@ class MovieThumbnail extends React.Component {
         movie_id: this.state.movie_id
       }
     };
+    this.setState({
+      movieAddedToList: true
+    });
     this.props.postUserMovie(assData);
   }
 
@@ -147,9 +150,22 @@ class MovieThumbnail extends React.Component {
             <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
               <i className="fas fa-volume-up"></i>
             </div>
-            <div className="add-movie-btn" onClick={this.handleAddMovie}>
-              <i className="fas fa-plus"></i>
-            </div>
+            {this.state.movieAddedToList ?
+              <button 
+                className="remove-movie-btn" 
+                onClick={this.handleRemoveMovie} 
+              >
+                
+              </button> :
+              <button 
+                disabled={this.state.movieAddedToList} 
+                className="add-movie-btn" 
+                onClick={this.handleAddMovie}
+              >
+                <i className="fas fa-plus"></i>
+              </button>
+
+            }
           </div> : 
           null
         }
