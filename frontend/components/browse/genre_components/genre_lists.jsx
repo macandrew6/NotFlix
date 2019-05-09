@@ -73,7 +73,7 @@ class GenreLists extends React.Component {
   }
 
   render() {
-    const { genre } = this.props;
+    const { genre, postUserMovie, user } = this.props;
     const { moviesInGenre, showSliderButtons } = this.state;
     return (
       <div className="genre-lists-container">
@@ -92,7 +92,12 @@ class GenreLists extends React.Component {
             }}>
               {
                 moviesInGenre.map(movie => (
-                  <MovieThumbnail key={movie.id} movie={movie} />
+                  <MovieThumbnail 
+                    key={movie.id} 
+                    movie={movie} 
+                    user={user}
+                    postUserMovie={postUserMovie}
+                  />
                 ))
               }
           </div>

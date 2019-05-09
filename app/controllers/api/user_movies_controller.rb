@@ -2,7 +2,7 @@ class Api::UserMoviesController < ApplicationController
   def create
     @user_movie = UserMovie.new(user_movies_params)
     if @user_movie.save
-      render :show
+      render :index
     else
       render json: ["cannot add the same movie"]
     end

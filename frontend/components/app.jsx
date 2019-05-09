@@ -11,7 +11,7 @@ import LoginFormContainer from './session_form/login_container';
 import BrowseContainer from './browse/browse_components/browse_container.js';
 import MovieWatch from './browse/movie_components/movie_watch_container';
 import SearchPage from './browse/nav_bar_components/search_components/search_page';
-import MyList from './browse/my_lists_components/my_list';
+import MyListContainer from './browse/my_lists_components/my_list_container';
 
 const App = () => (
   <div className="body">
@@ -20,8 +20,8 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/browse" component={BrowseContainer} />
-      <ProtectedRoute path="/browse/watch/:movieId" component={MovieWatch} />
-      <ProtectedRoute exact path="/browse/my-list" component={MyList} />
+      <ProtectedRoute exact path="/browse/watch/:movieId" component={MovieWatch} />
+      <ProtectedRoute exact path="/browse/my-list" component={MyListContainer} />
       <Redirect to="/" />
     </Switch>
   </div>

@@ -10,6 +10,8 @@ class MovieThumbnail extends React.Component {
       movie: this.props.movie.movieUrl
     };
     this.state = {
+      movie_id: this.props.movie.id,
+      user_id: this.props.user.id,
       movieAddedToList: false,
       height: 149,
       width: 250,
@@ -64,6 +66,7 @@ class MovieThumbnail extends React.Component {
   }
   
   handleMouseEnter(e) {
+    e.stopPropagation();
     e.preventDefault();
     this.setState({
       height: 260,
@@ -90,7 +93,13 @@ class MovieThumbnail extends React.Component {
 
   handleAddMovie(e) {
     e.preventDefault();
-    
+    const assData = {
+      user_movie: {
+        user_id: this.state.user_id,
+        movie_id: this.state.movie_id
+      }
+    };
+    this.props.postUserMovie(assData);
   }
 
   // openShowPage(e) {
@@ -110,10 +119,8 @@ class MovieThumbnail extends React.Component {
   // }
       
   render() {
-
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons } = this.state;
-
     return (
       <div 
         className="movie-thumbnail-slide"

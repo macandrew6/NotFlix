@@ -23,7 +23,9 @@ class Browse extends React.Component {
   // }
 
   handleMouseEnter(e) {
-    e.preventDefault();
+    e.stopPropagation(); 
+    e.preventDefault(); 
+    
     setTimeout(() => {
       this.player.play();
     }, 300);
