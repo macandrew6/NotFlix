@@ -20,6 +20,25 @@
   left: 26px;
 }
 
+.icon-div {
+  height: 19px;
+  width: 29px;
+  font-size: 20px;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  color: antiquewhite;
+  border: 1px solid white;
+  background: black;
+  padding: 7px;
+  width: 210px;
+}
+
 .nav-2 {
   display: flex;
   line-height: 0px;

@@ -25,19 +25,23 @@ class GenreLists extends React.Component {
   }
 
   goToNextVideo() {
-    this.setState(() => {
-      return {
-        currentIndex: this.state.currentIndex + 1,
-        translateValue: this.state.translateValue - (this.slideWidth())
-      };
-    });
+    if(this.state.currentIndex !== this.state.moviesInGenre.length-3) {
+      this.setState(() => {
+        return {
+          currentIndex: this.state.currentIndex + 1,
+          translateValue: this.state.translateValue - (this.slideWidth())
+        };
+      });
+    }
   }
 
   goToPrevVideo() {
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex - 1,
-      translateValue: prevState.translateValue + (this.slideWidth())
-    }));
+    if(this.state.currentIndex !== 0){
+      this.setState(prevState => ({
+        currentIndex: prevState.currentIndex - 1,
+        translateValue: prevState.translateValue + (this.slideWidth())
+      }));
+    }
   }
 
   slideWidth() {
@@ -55,6 +59,7 @@ class GenreLists extends React.Component {
   render() {
     const { genre } = this.props;
     const { moviesInGenre } = this.state;
+    console.log(this.state.currentIndex);
     return (
       <div className="genre-lists-container">
         
@@ -68,7 +73,7 @@ class GenreLists extends React.Component {
               transition: 'transform ease-out 0.90s'
             }}>
               {
-                this.state.moviesInGenre.map(movie => (
+                moviesInGenre.map(movie => (
                   <MovieThumbnail key={movie.id} movie={movie} />
                 ))
               }

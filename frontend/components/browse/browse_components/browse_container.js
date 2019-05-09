@@ -6,6 +6,7 @@ import { fetchGenres } from '../../../actions/genres';
 import Browse from './browse';
 
 const mapStateToProps = ({entities: { movies, genres, movieGenres }}) => ({
+  initVideo: Object.values(movies)[4],
   movies: Object.keys(movies).map(id => movies[id]),
   genres: Object.keys(genres).map(id => genres[id])
 });

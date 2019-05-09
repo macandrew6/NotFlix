@@ -45,14 +45,17 @@ class SearchBar extends React.Component {
     }
 
     return (
-      <div>
-        <input 
-          className="search-bar"
-          type="text" 
-          placeholder="Title, people, genres"
-          value={this.state.input}
-          onChange={this.handleSearchChange}  
-        />
+      <div >
+        <div className="search-bar-container">
+          <div className="icon-div"><i className="fas fa-search"></i></div>
+          <input 
+            className="search-bar"
+            type="text" 
+            placeholder="Title, people, genres..."
+            value={this.state.input}
+            onChange={this.handleSearchChange}  
+          />
+        </div>
         <div>
           {filteredMovies.length > 0 ? 
             <SearchPage filteredMovies={filteredMovies} /> : 

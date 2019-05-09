@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Player, ControlBar } from 'video-react';
+import { Player } from 'video-react';
 
 class MovieThumbnail extends React.Component {
   constructor(props) {
