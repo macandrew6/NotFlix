@@ -23,6 +23,14 @@ class Movie < ApplicationRecord
     through: :movie_genres,
     source: :genre
 
+  has_many :user_movies,
+    foreign_key: :movie_id,
+    class_name: :UserMovie
+
+  has_many :user,
+    through: :user_movies,
+    source: :user
+
   has_one_attached :image
   has_one_attached :trailer
   has_one_attached :movie

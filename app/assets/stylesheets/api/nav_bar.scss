@@ -10,13 +10,30 @@
 }
 
 .nav-1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 100;
   display: flex;
   align-items: center;
 }
 
 .nav-1 a {
+  text-decoration: none;
   position: relative;
-  margin-left: 5px;
+  color: whitesmoke;
+  margin-left: 19px;
+}
+
+.nav-1 a:hover {
+  text-shadow: 0 0 18px #f8f8f8;
+}
+
+.nav-1 a:visited {
+  text-decoration: none;
+}
+
+.nav-1 a:active {
+  text-decoration: underline;
 }
 
 .nav-bar-logo {

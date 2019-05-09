@@ -232,8 +232,6 @@ heroine = Movie.create!({
   rating: 'TV-G',
   content_length: '8h 14m'
 })
-
-=begin
 unacknowledged = Movie.create!({
   title: 'Unacknowledged',
   description: 'Noted UFO expert Dr. Steven Greer interviews witnesses and presents classified documents concerning the existence of extraterrestrials.',
@@ -264,36 +262,38 @@ our_planet = Movie.create!({
   rating: 'TV-G',
   content_length: '10h 14m'
 })
-=end
 
 DOCUMENTARY_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/blue_planet.mp4",
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/heroine.mp4",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/unacknowledged.mp4"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/unacknowledged.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/truth.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/WWII.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/planetEarth2.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/ourPlanet.mp4",
 ]
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/truth.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/WWII.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/planetEarth2.mp4",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/trailers/ourPlanet.mp4",
-# ]
 
 DOCUMENTARY_IMG = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABajGT2MoL4fKStjxz75yuSSNK6M2cbtbaVNVMhmMwfjlIZDfzAdpEmjrsMX1fPMII1R7A_kK3whOx4DaYEpijtuUWcOIEWLM.webp",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABRww2_-O8j7P6xoW1vpeeplXOOT-g4P9pXT2lUF6-guHKMfsaYJOWM2h1U60ovBiJ6OlBAnfEIsdPkWVtsUcCxAJB4hS0rYr.jpg"
-  ]
-# [  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABWLBdZQMS65Zlac17UmTGmqSEq_HlPF4lVaP_9pWj0nnqd50SwQLYkIgXndm3wt5YVhTL7IVcmV5sQymWlkc6FRwsWJ7_js4.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABXFgiOjpVyJ7ULaRsl4_fqWMegeu3Xqb_fM0V8pcwGORVMTnrmZBb9V7qNUrBMZKoq4J7j5lWxid2QHiTMQcQxmtY55P-O1D.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABYJPX0EF7m41U-D3mA2sRleOWzqdMhyvnvnNlFe4HHbfkU1aJ6CfVT_kI3Tqr-KsvoE_ACXDLgWQnZHI8IAJCvAHdPCCardU.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABZ7AbREqDVaFUKW54zr7EygA6SGX5wEq0MKyZtON3GjfOEtbpsUOJ8vD3aqhJnWUU-ziBqGxij2m3pdDXeAWLjxqX8dMaBtk.webp",
-#   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/our_planet.jpg",
-# ]
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABRww2_-O8j7P6xoW1vpeeplXOOT-g4P9pXT2lUF6-guHKMfsaYJOWM2h1U60ovBiJ6OlBAnfEIsdPkWVtsUcCxAJB4hS0rYr.jpg",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABWLBdZQMS65Zlac17UmTGmqSEq_HlPF4lVaP_9pWj0nnqd50SwQLYkIgXndm3wt5YVhTL7IVcmV5sQymWlkc6FRwsWJ7_js4.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABXFgiOjpVyJ7ULaRsl4_fqWMegeu3Xqb_fM0V8pcwGORVMTnrmZBb9V7qNUrBMZKoq4J7j5lWxid2QHiTMQcQxmtY55P-O1D.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABYJPX0EF7m41U-D3mA2sRleOWzqdMhyvnvnNlFe4HHbfkU1aJ6CfVT_kI3Tqr-KsvoE_ACXDLgWQnZHI8IAJCvAHdPCCardU.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/AAAABZ7AbREqDVaFUKW54zr7EygA6SGX5wEq0MKyZtON3GjfOEtbpsUOJ8vD3aqhJnWUU-ziBqGxij2m3pdDXeAWLjxqX8dMaBtk.webp",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/images/our_planet.jpg",
+]
 
 DOCUMENTARY_VID = [
   "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/blue-planet-movie.mp4",
-  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/heroine-movie.mp4"
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/heroine-movie.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/unacknowledged.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/truth.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/wwII.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/planetII.mp4",
+  "https://s3-us-west-1.amazonaws.com/notflix-dev/movies-genres/documentary/videos/ourplanet.mp4"
 ]
 
-DOCUMENTARY_DATA = [blue_planet, heroine]#, unacknowledged, truth, wwII, planet_II, our_planet]
+DOCUMENTARY_DATA = [blue_planet, heroine, unacknowledged, truth, wwII, planet_II, our_planet]
 
 DOCUMENTARY_DATA.each_with_index do |movie_data, i|
   formatMovie(movie_data, DOCUMENTARY_IMG[i], DOCUMENTARY_TRAILER[i], DOCUMENTARY_VID[i])

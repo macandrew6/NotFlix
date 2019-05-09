@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import MovieThumbnail from '../../movie_components/movieThumbnail';
 
 const SearchPage = (props) => {
-  console.log("filtered movies search Page", props);
   const { filteredMovies } = props;
   return (
     <div className="search-page-container">

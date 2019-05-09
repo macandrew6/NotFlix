@@ -15,7 +15,6 @@ class MovieWatch extends React.Component {
     if (!this.props.movie) {
       return null;
     }
-    console.log(this.props);
     return (
       <div 
         className="full-screen-video-player"

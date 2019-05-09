@@ -75,7 +75,6 @@ class GenreLists extends React.Component {
   render() {
     const { genre } = this.props;
     const { moviesInGenre, showSliderButtons } = this.state;
-    console.log(this.state.currentIndex);
     return (
       <div className="genre-lists-container">
         <h2 className="genre-title">{genre.name}</h2>

@@ -48,7 +48,6 @@ class Browse extends React.Component {
     if (!initVideo) {
       return null;
     }
-    console.log(initVideo.trailerUrl);
     return (
       <div className="browse-container">
         <NavBarContainer movies={movies}/>

@@ -72,7 +72,7 @@ class MovieThumbnail extends React.Component {
     });
     setTimeout(() => {
       this.play();
-    }, 300);
+    }, 270);
   }
 
   handleMouseLeave(e) {
@@ -85,7 +85,7 @@ class MovieThumbnail extends React.Component {
     setTimeout(() => {
       this.pause();
       this.load();
-    }, 300);
+    }, 380);
   }
 
   handleAddMovie(e) {
