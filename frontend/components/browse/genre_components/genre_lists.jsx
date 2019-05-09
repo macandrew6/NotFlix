@@ -84,8 +84,8 @@ class GenreLists extends React.Component {
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
-          {showSliderButtons ? <LeftArrow goToPrevVideo={this.goToPrevVideo}/> : null}
-          <div 
+        {showSliderButtons ? <LeftArrow goToPrevVideo={this.goToPrevVideo}/> : null}
+        <div 
             className="movie-thumbnail-slide-container"
             style={{
               transform: `translateX(${this.state.translateValue}px)`,

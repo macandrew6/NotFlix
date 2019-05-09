@@ -85,7 +85,7 @@ class MovieThumbnail extends React.Component {
     setTimeout(() => {
       this.pause();
       this.load();
-    }, 400);
+    }, 300);
   }
 
   handleAddMovie(e) {

@@ -22,15 +22,15 @@
 .search-page .movie-thumbnail-slide {
   position: relative;
   display: flex;
-  margin: 2px;
-  width: 320px;
-  height: 183px;
+  margin: 0px 5px 20px 0px;
+  width: 250px;
+  height: 149px;
   transition: all .4s ease-in-out; 
 }
 
 .search-page .movie-thumbnail-slide:hover {
-  width: 402px;
-  height: 230px;
+    height: 260px;
+    width: 460px;
 }
 
 .movie-thumbnail-slide .toggle-thumbnail-sound {
