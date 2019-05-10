@@ -5,7 +5,7 @@ import MyList from './my_list';
 
 const mapStateToProps = ({ entities: { userMovies, users }, session}) => ({
   user: users[session.id],
-  userMovies: userMovies
+  userMovies: Object.values(userMovies)
 });
 
 

@@ -6,21 +6,43 @@
   display: flex;
   height: 100vh;
   background-color: #141414;
-  justify-content: center;
   align-items: center;
 }
 
 .control-video-div {
-  position: relative;
+  width: 100%;
+}
+
+.control-video-div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18px;
+  height: 57px;
+  opacity: 1;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, #141414, black);
+}
+.control-video-div::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 78px;
+  opacity: 1;
+  z-index: 1;
+  background-image: linear-gradient(to top,#141414, black)
 }
 
 .movie-watch-back-btn {
   position: absolute;
   color: antiquewhite;
-  opacity: .1;
+  opacity: .2;
   font-size: 40px;
-  top: 40px;
-  left: 40px;
+  top: 23px;
+  left: 50px;
   border-radius: 100%;
   z-index: 1;
 }

@@ -9,7 +9,6 @@ class Api::UserMoviesController < ApplicationController
   end
 
   def index 
-    @user = User.all.includes(:movies)
     @user_movies = UserMovie.all
   end
 

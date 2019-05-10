@@ -120,6 +120,29 @@
   -webkit-animation-iteration-count: infinite;
 }
 
+.remove-movie-btn {
+  position: absolute;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  opacity: 0.4;
+  height: 31px;
+  width: 30px;
+  right: 12px;
+  bottom: 64px;
+  font-size: 28px;
+  z-index: 1;
+  color: white;
+}
+
+.remove-movie-btn:hover {
+  -webkit-animation-name: addPulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+
 .video-react .video-react-control-bar {
   display: none;
 }

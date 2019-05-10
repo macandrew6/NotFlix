@@ -29,6 +29,7 @@ class MovieThumbnail extends React.Component {
     this.load = this.load.bind(this);
     this.toggleSound = this.toggleSound.bind(this);
     this.handleAddMovie = this.handleAddMovie.bind(this);
+    this.handleRemoveMovie = this.handleRemoveMovie.bind(this);
     // this.openShowPage = this.openShowPage.bind(this);
     // this.closeShowPage = this.closeShowPage.bind(this);
   }
@@ -91,6 +92,12 @@ class MovieThumbnail extends React.Component {
     }, 380);
   }
 
+  handleRemoveMovie(e) {
+    e.preventDefault();
+    //send some data to the database to delete this association from the db
+    console.log('i dont do anything yet, but im supposed to remove this movie from my list');
+  }
+
   handleAddMovie(e) {
     e.preventDefault();
     const assData = {
@@ -99,10 +106,14 @@ class MovieThumbnail extends React.Component {
         movie_id: this.state.movie_id
       }
     };
+    setTimeout(() => {
+      this.props.postUserMovie(assData);
+    }, 300);
+
     this.setState({
       movieAddedToList: true
     });
-    this.props.postUserMovie(assData);
+
   }
 
   // openShowPage(e) {
@@ -152,10 +163,11 @@ class MovieThumbnail extends React.Component {
             </div>
             {this.state.movieAddedToList ?
               <button 
+                disabled={!this.state.movieAddedToList}
                 className="remove-movie-btn" 
                 onClick={this.handleRemoveMovie} 
               >
-                
+                <i className="fas fa-minus-circle"></i>
               </button> :
               <button 
                 disabled={this.state.movieAddedToList} 
@@ -164,7 +176,6 @@ class MovieThumbnail extends React.Component {
               >
                 <i className="fas fa-plus"></i>
               </button>
-
             }
           </div> : 
           null
