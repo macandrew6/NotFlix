@@ -6,34 +6,14 @@
   display: flex;
   height: 100vh;
   background-color: #141414;
-  align-items: center;
+  flex-direction: column;
 }
 
 .control-video-div {
+  position: absolute;
+  top: 12%;
+  bottom:11%;
   width: 100%;
-}
-
-.control-video-div::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 18px;
-  height: 57px;
-  opacity: 1;
-  z-index: 1;
-  background-image: linear-gradient(to bottom, #141414, black);
-}
-.control-video-div::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0px;
-  height: 78px;
-  opacity: 1;
-  z-index: 1;
-  background-image: linear-gradient(to top,#141414, black)
 }
 
 .movie-watch-back-btn {
@@ -48,11 +28,17 @@
 }
 
 .movie-watch-back-btn:hover {
-  -webkit-animation-name: whitePulse;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
+  position: absolute;
+  color: white;
+  opacity: 0.9;
 }
-
+.movie-watch-back-btn:hover:after {
+  content: 'back to browse';
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+  font-size: 20px;
+}
 
 @-webkit-keyframes whitePulse {
   from { border-radius: 20px; background-color: #181717; opacity: 0.6; color: white; -webkit-box-shadow: 0 0 9px #333; }
