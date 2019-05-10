@@ -7,12 +7,10 @@
   height: 100vh;
   background-color: #141414;
   flex-direction: column;
+  justify-content: center;
 }
 
 .control-video-div {
-  position: absolute;
-  top: 12%;
-  bottom:11%;
   width: 100%;
 }
 

@@ -23,11 +23,6 @@ class MovieWatch extends React.Component {
       <div 
         className="full-screen-video-player"
       >
-        <Link to='/browse'>
-          <div className="movie-watch-back-btn">
-            <i className="fas fa-arrow-alt-circle-left"></i>
-          </div>
-        </Link>
         <div className="control-video-div">
           <video 
             className="watch-movie-big-guy"
@@ -38,6 +33,11 @@ class MovieWatch extends React.Component {
             autoplay="autoplay"
             controls
           />
+          <Link to='/browse'>
+            <div className="movie-watch-back-btn">
+              <i className="fas fa-arrow-alt-circle-left"></i>
+            </div>
+          </Link>
         </div>
       </div>
     );
