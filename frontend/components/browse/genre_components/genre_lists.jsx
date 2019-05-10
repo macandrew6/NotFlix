@@ -41,7 +41,6 @@ class GenreLists extends React.Component {
   }
 
   goToNextVideo() {
-    console.log(this.state.currentIndex);
     if(this.state.currentIndex < this.state.moviesInGenre.length-5) {
       this.setState(() => {
         return {
