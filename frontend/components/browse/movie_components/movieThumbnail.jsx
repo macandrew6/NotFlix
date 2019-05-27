@@ -113,7 +113,6 @@ class MovieThumbnail extends React.Component {
     this.setState({
       movieAddedToList: true
     });
-
   }
 
   // openShowPage(e) {
