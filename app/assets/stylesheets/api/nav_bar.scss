@@ -1,4 +1,7 @@
 .nav-bar-container {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 100;
   z-index: 2;
   position: sticky;
   top: 0; 
@@ -10,9 +13,6 @@
 }
 
 .nav-1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 100;
   display: flex;
   align-items: center;
 }
@@ -65,6 +65,8 @@
 
 .nav-2 {
   display: flex;
+  justify-content: center;
+  align-items: center;
   line-height: 0px;
   color: grey;
 }
@@ -88,4 +90,8 @@
   border-radius: 2px;
   font-size: 10px;
   text-decoration: none;
+}
+
+.logout-btn:hover {
+  background-color: #94030b
 }

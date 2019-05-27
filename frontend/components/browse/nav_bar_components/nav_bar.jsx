@@ -14,7 +14,7 @@ const NavBar = ({ logout, user, movies, fetchMovies }) => {
       <nav className="nav-2">
         <SearchBar movies={movies} fetchMovies={fetchMovies} user={user}/>
         <p>Hello <span>{user.email}</span></p>
-        <button className="logout-btn" onClick={logout}>LOGOUT!</button>
+        <button className="logout-btn" onClick={logout}>LOGOUT</button>
       </nav>
     </header>
   );
