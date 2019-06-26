@@ -8,6 +8,17 @@
   width: 100%;
 }
 
+.init-vid-button-div {
+  position: absolute;
+  font-size: 40px;
+  bottom: 0;
+  right: 50px;
+}
+
+.init-vid-sound:hover {
+  color:white;
+}
+
 .video-react .video-react-video {
   width: 1600px;
   height: 500px;

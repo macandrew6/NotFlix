@@ -146,6 +146,7 @@ class MovieThumbnail extends React.Component {
               this.player = p;
             }}
             autoPlay={autoplay}
+            muted={true}
             fluid={false}
             poster={movie.imageUrl}
             src={source}

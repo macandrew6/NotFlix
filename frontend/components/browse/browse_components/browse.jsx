@@ -6,26 +6,46 @@ import { Player } from 'video-react';
 class Browse extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state= {
+      showButtons: false
+    };
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    // this.handleStateChange = this.handleStateChange.bind(this);
+    this.handleStateChange = this.handleStateChange.bind(this);
+    this.toggleSound = this.toggleSound.bind(this);
   }
 
   componentDidMount() {
+    // this.player.subscribeToStateChange(this.handleStateChange);
     this.props.fetchGenres();
     this.props.fetchMovies();
   }
 
-  // handleStateChange(state, prevState) {
-  //   this.setState({
-  //     player: state
-  //   });
-  // }
+  handleStateChange(state, prevState) {
+    this.setState({
+      player: state
+    });
+  }
+
+  toggleSound(soundState) {
+    return () => {
+      if (this.player.muted) {
+        this.player.muted = soundState;
+      } else {
+        this.player.muted = !soundState;
+      }
+    };
+  }
 
   handleMouseEnter(e) {
     e.stopPropagation(); 
     e.preventDefault(); 
     
+    this.setState({
+      showButtons: true
+    });
+
     setTimeout(() => {
       this.player.play();
     }, 300);
@@ -33,6 +53,11 @@ class Browse extends React.Component {
 
   handleMouseLeave(e) {
     e.preventDefault();
+
+    this.setState({
+      showButtons: false
+    });
+
     setTimeout(() => {
       this.player.pause();
     }, 400);
@@ -46,7 +71,8 @@ class Browse extends React.Component {
   // }
 
   render() {
-    const { movies, genres, fetchMovies, initVideo } = this.props;
+    const { movies, genres, initVideo } = this.props;
+    const { showButtons } = this.state;
     if (!initVideo) {
       return null;
     }
@@ -62,11 +88,19 @@ class Browse extends React.Component {
             ref={(p) => {
               this.player = p;
             }}
+            muted={true}
             load={true}
             src={initVideo.trailerUrl}
             autoPlay={true}
             loop={true}
           />
+          {showButtons ? 
+            <div className="init-vid-button-div">
+              <div className="init-vid-sound" onClick={this.toggleSound(false)}>
+                <i className="fas fa-volume-up"></i>
+              </div>
+            </div> : null
+          }
         </div>
         <div className="genre-lists">
             {
