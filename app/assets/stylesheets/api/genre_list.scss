@@ -8,17 +8,6 @@
   width: 100%;
 }
 
-.init-video::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -179px;
-  height: 68px;
-  opacity: 1;
-  background-image: linear-gradient(to top,#141414, black)
-}
-
 .video-react .video-react-video {
   width: 1600px;
   height: 500px;
