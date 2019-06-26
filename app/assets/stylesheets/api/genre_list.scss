@@ -5,11 +5,7 @@
 }
 
 .init-video {
-  position: relative;
-  top: -100px;
-  font-size: 48px;
-  width: 1328px;
-  height: 630px;
+  width: 100%;
 }
 
 .init-video::after {
@@ -47,6 +43,6 @@
   color: white;
   justify-content: left;
   text-transform: capitalize;
-  font-family: 'Wallpoet', cursive;
-  margin: 30px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 30px 0px 0 30px;
 }
