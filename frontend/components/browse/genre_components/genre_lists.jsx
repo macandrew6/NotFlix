@@ -60,6 +60,10 @@ class GenreLists extends React.Component {
     }
   }
 
+  getVidData(vidData, leftMostIndex) {
+    
+  }
+
   slideWidth() {
     return document.querySelector('.movie-thumbnail-slide').clientWidth;
   }
