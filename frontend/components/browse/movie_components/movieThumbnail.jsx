@@ -139,6 +139,9 @@ class MovieThumbnail extends React.Component {
         className="movie-thumbnail-slide"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
+        style={{
+          transform: `translateX(${this.props.offSet[0]}px)`
+        }}
         >
         <Link to={`/browse/watch/${movie.id}`}>
           <Player 

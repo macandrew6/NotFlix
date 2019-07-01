@@ -21,7 +21,8 @@
 .movie-thumbnail-slide {
   display: flex;
   margin: 2px;
-  position: relative;
+  position: absolute;
+  transition: transform 400ms linear;
 }
 
 .back-arrow-btn {
