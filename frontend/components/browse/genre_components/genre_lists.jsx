@@ -60,9 +60,6 @@ class GenreLists extends React.Component {
   }
 
   getXOffsets(vidCount, leftMostIndex, marginWidth, thumbnailWidth) {
-    // 7 wide => marginWidth
-    // returns the offset of the X
-    // if leftMostIndex is 0
     let arr = [
       [marginWidth - thumbnailWidth * 2, false],
       [marginWidth - thumbnailWidth, true],
@@ -71,10 +68,11 @@ class GenreLists extends React.Component {
       [marginWidth + thumbnailWidth * 2, true],
       [marginWidth + thumbnailWidth * 3, true],
       [marginWidth + thumbnailWidth * 4, true],
-      [marginWidth + thumbnailWidth * 5, false],
+      [marginWidth + thumbnailWidth * 5, true],
+      [marginWidth + thumbnailWidth * 6, false],
     ];
 
-    while ( leftMostIndex < 0 ) {
+    while ( leftMostIndex <= 0 ) {
       leftMostIndex += vidCount;
     }
 
@@ -82,11 +80,11 @@ class GenreLists extends React.Component {
       leftMostIndex -= vidCount;
     }
 
-    while ( arr.length < vidCount ) {
+    while ( arr.length <= vidCount ) {
       arr.push(arr[arr.length - 1].slice());
     }
 
-    for (let i = 0; i < leftMostIndex; i++) {
+    for (let i = 0; i <= leftMostIndex; i++) {
       arr.unshift(arr.pop());
     }
 
@@ -124,6 +122,7 @@ class GenreLists extends React.Component {
             {
               moviesInGenre.map((movie, idx) => (
                 <MovieThumbnail 
+                  idx={idx}
                   offSet={offSets[idx]}
                   key={movie.id} 
                   movie={movie} 

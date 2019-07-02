@@ -22,7 +22,7 @@
   display: flex;
   margin: 2px;
   position: absolute;
-  transition: transform 400ms linear;
+  transition: transform 400ms ease-in-out;
 }
 
 .back-arrow-btn {

@@ -70,8 +70,8 @@ class MovieThumbnail extends React.Component {
     e.stopPropagation();
     e.preventDefault();
     this.setState({
-      height: 260,
-      width: 460,
+      // height: 260,
+      // width: 460,
       showButtons: true
     });
     setTimeout(() => {
@@ -114,33 +114,19 @@ class MovieThumbnail extends React.Component {
       movieAddedToList: true
     });
   }
-
-  // openShowPage(e) {
-  //   e.preventDefault();
-  //   this.setState({
-  //     show: true,
-  //     showClass: "show"
-  //   });
-  // }
-
-  // closeShowPage(e) {
-  //   e.preventDefault();
-  //   this.setState({
-  //     show: false,
-  //     showClass: "hide"
-  //   });
-  // }
       
   render() {
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons } = this.state;
+    console.log(this.props.offSet[0]);
     return (
       <div 
         className="movie-thumbnail-slide"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         style={{
-          transform: `translateX(${this.props.offSet[0]}px)`
+          transform: `translateX(${this.props.offSet[0]}px)`,
+          display: `${this.props.offSet[1] ? 'flex' : 'none'}`
         }}
         >
         <Link to={`/browse/watch/${movie.id}`}>
