@@ -118,16 +118,15 @@ class MovieThumbnail extends React.Component {
   render() {
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons } = this.state;
-    console.log(this.props.offSet[0]);
     return (
       <div 
         className="movie-thumbnail-slide"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
-        style={{
+        style={this.props.idx ? {
           transform: `translateX(${this.props.offSet[0]}px)`,
           display: `${this.props.offSet[1] ? 'flex' : 'none'}`
-        }}
+        } : {position: 'relative'}}
         >
         <Link to={`/browse/watch/${movie.id}`}>
           <Player 

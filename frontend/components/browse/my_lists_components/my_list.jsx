@@ -19,7 +19,7 @@ class MyList extends React.Component {
         <h2>My List</h2>
         <div className="my-list-movies-container">
           {userMovies.map(userMovie => (
-            <MovieThumbnail 
+            <MovieThumbnail
               key={userMovie.id} 
               movie={userMovie}
               user={user}  
