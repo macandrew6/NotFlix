@@ -9,8 +9,6 @@ class GenreLists extends React.Component {
     
     this.state = {
       moviesInGenre: this.props.moviesInGenre,
-      currentIndex: 0,
-      translateValue: 0,
       showSliderButtons: false,
       leftMostIndex: 0
     };
@@ -42,25 +40,21 @@ class GenreLists extends React.Component {
   }
 
   goToNextVideo() {
-      this.setState(() => {
+      this.setState(prevState => {
         return {
-          leftMostIndex: this.state.leftMostIndex + 1,
-          currentIndex: this.state.currentIndex + 1,
-          translateValue: this.state.translateValue - (this.slideWidth())
+          leftMostIndex: prevState.leftMostIndex + 1,
         };
       });
   }
 
   goToPrevVideo() {
       this.setState(prevState => ({
-        leftMostIndex: this.state.leftMostIndex - 1,
-        currentIndex: prevState.currentIndex - 1,
-        translateValue: prevState.translateValue + (this.slideWidth())
+        leftMostIndex: prevState.leftMostIndex - 1,
       }));
   }
 
   getXOffsets(vidCount, leftMostIndex, marginWidth, thumbnailWidth) {
-    let arr = [
+    let visibleVidArr = [
       [marginWidth - thumbnailWidth * 2, false],
       [marginWidth - thumbnailWidth, true],
       [marginWidth, true],
@@ -69,10 +63,10 @@ class GenreLists extends React.Component {
       [marginWidth + thumbnailWidth * 3, true],
       [marginWidth + thumbnailWidth * 4, true],
       [marginWidth + thumbnailWidth * 5, true],
-      [marginWidth + thumbnailWidth * 6, false],
+      [marginWidth + thumbnailWidth * 6, false]
     ];
 
-    while ( leftMostIndex <= 0 ) {
+    while ( leftMostIndex < 0 ) {
       leftMostIndex += vidCount;
     }
 
@@ -80,19 +74,15 @@ class GenreLists extends React.Component {
       leftMostIndex -= vidCount;
     }
 
-    while ( arr.length <= vidCount ) {
-      arr.push(arr[arr.length - 1].slice());
+    while ( visibleVidArr.length < vidCount ) {
+      visibleVidArr.push(visibleVidArr[visibleVidArr.length - 1].slice());
     }
 
     for (let i = 0; i <= leftMostIndex; i++) {
-      arr.unshift(arr.pop());
+      visibleVidArr.unshift(visibleVidArr.pop());
     }
 
-    return arr;
-  }
-
-  slideWidth() {
-    return document.querySelector('.movie-thumbnail-slide').clientWidth;
+    return visibleVidArr;
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {

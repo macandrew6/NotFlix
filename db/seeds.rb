@@ -83,6 +83,12 @@ earth = Movie.create!({
   rating: 'R',
   content_length: '4m'
 })
+dirty_money = Movie.create!({
+  title: 'Dirty Money',
+  description: 'From crippling payday loans to cars that cheat emissions tests, this investigative series exposes brazen acts of corporate greed and corruption.',
+  rating: 'TV-MA',
+  content_length: '12m'
+})
 
 DOCUMENTARY_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/trailers/planet-trailer.mp4",
@@ -93,6 +99,7 @@ DOCUMENTARY_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/trailers/planetII-trailer.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/trailers/our-planet-trailer.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/trailers/earth-trailer.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/documentary/trailers/dirty-money-trailer.mp4"
 ]
 
 DOCUMENTARY_IMG = [
@@ -104,6 +111,7 @@ DOCUMENTARY_IMG = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/images/planetearthII.webp",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/images/ourplanet.jpg",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/images/earth.webp",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/documentary/images/dirty_money.jpg"
 ]
 
 DOCUMENTARY_VID = [
@@ -115,9 +123,10 @@ DOCUMENTARY_VID = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/movies/planetII-vid.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/movies/ourplanet-vid.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/documentary/movies/earth-vid.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/documentary/movies/dirty-money-vid.mp4"
 ]
 
-DOCUMENTARY_DATA = [blue_planet, heroine, unacknowledged, truth, wwII, planet_II, our_planet, earth]
+DOCUMENTARY_DATA = [blue_planet, heroine, unacknowledged, truth, wwII, planet_II, our_planet, earth, dirty_money]
 
 DOCUMENTARY_DATA.each_with_index do |movie_data, i|
   formatMovie(movie_data, DOCUMENTARY_IMG[i], DOCUMENTARY_TRAILER[i], DOCUMENTARY_VID[i])
@@ -171,6 +180,18 @@ bolt = Movie.create!({
   rating: "PG",
   content_length: "1h 38m"
 })
+hercules = Movie.create!({
+  title: "Hercules",
+  description: "The heavenly Hercules is stripped of his immortality and raised on Earth instead of Olympus, where he's forced to take on Hades and assorted monsters.",
+  rating: "PG",
+  content_length: "1h 40m"
+})
+mulan = Movie.create!({
+  title: "Mulan",
+  description: "Disney brings an ancient legend to life in this animated tale of a tomboy who disguises herself as a man so she can fight with the Chinese Army.",
+  rating: "PG",
+  content_length: "1h 31m"
+})
 
 ANIMATION_IMG = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/images/bee.webp",
@@ -180,6 +201,8 @@ ANIMATION_IMG = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/images/despacito.webp",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/images/cars.webp",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/images/bolt.webp",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/animation/images/hercules.webp",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/animation/images/mulan.webp"
 ]
 
 ANIMATION_TRAILER = [
@@ -189,7 +212,9 @@ ANIMATION_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/trailers/incredible-trailer.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/trailers/despacito-trailer.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/trailers/cars-trailer.mp4",
-  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/trailers/bolt-trailer.mp4"
+  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/trailers/bolt-trailer.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/animation/trailers/hercules-trailer.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/animation/trailers/mulan+trailer.mp4"
 ]
 
 ANIMATION_VIDS = [
@@ -199,10 +224,12 @@ ANIMATION_VIDS = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/movies/incredible-vid.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/movies/despacito-vid.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/movies/cars-vid.mp4",
-  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/movies/bolt-vid.mp4"
+  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/animation/movies/bolt-vid.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/animation/movies/hercules-vid.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/animation/movies/mulan-vid.mp4"
 ]
 
-ANIMATION_MOVIE_DATA = [bee, boss_baby, captain, incredibles, despicable, cars, bolt]
+ANIMATION_MOVIE_DATA = [bee, boss_baby, captain, incredibles, despicable, cars, bolt, hercules, mulan]
 
 ANIMATION_MOVIE_DATA.each_with_index do |movie_data, i|
   formatMovie(movie_data, ANIMATION_IMG[i], ANIMATION_TRAILER[i], ANIMATION_VIDS[i])
@@ -262,6 +289,12 @@ killer = Movie.create!({
   rating: "R",
   content_length: "1h 56m"
 })
+revenger = Movie.create!({
+  title: "Revenger",
+  description: "Disney brings an ancient legend to life in this animated tale of a tomboy who disguises herself as a man so she can fight with the Chinese Army.",
+  rating: "R",
+  content_length: "1h 47m"
+})
 
 ACTION_IMG = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/images/avenger.webp",
@@ -271,7 +304,8 @@ ACTION_IMG = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/images/ipman.webp",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/images/killer.webp",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/images/polar.jpg",
-  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/images/thor.webp"
+  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/images/thor.webp",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/action/images/revenger.jpg"
 ]
 
 ACTION_TRAILER = [
@@ -282,7 +316,8 @@ ACTION_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/trailers/ipmap-trailer.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/trailers/killer-trail.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/trailers/polar-trailer.mp4",
-  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/trailers/thor-trailer.mp4"
+  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/trailers/thor-trailer.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/action/trailers/revenger-trailer.mp4"
 ]
 
 ACTION_VIDS = [
@@ -293,10 +328,11 @@ ACTION_VIDS = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/movies/ipmap-vid.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/movies/killer-vid.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/movies/polar-vid.mp4",
-  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/movies/thor-vid.mp4"
+  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/action/movies/thor-vid.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/action/movies/revenger-vid.mp4"
 ]
 
-ACTION_MOVIE_DATA = [avengers, black_panther, get_smart, gog, ipman, killer, polar, thor]
+ACTION_MOVIE_DATA = [avengers, black_panther, get_smart, gog, ipman, killer, polar, thor, revenger]
 
 ACTION_MOVIE_DATA.each_with_index do |movie_data, i|
   formatMovie(movie_data, ACTION_IMG[i], ACTION_TRAILER[i], ACTION_VIDS[i])
@@ -356,6 +392,12 @@ texas = Movie.create!({
   rating: 'R',
   content_length: '1h 38m'
 })
+horror_homes = Movie.create!({
+  title: 'Horror Homes',
+  description: 'Dream homes turn into property nightmares when mold, maggots, natural disasters and other inconveniences move in.',
+  rating: 'R',
+  content_length: '1h 30m'
+})
 
 HORROR_IMG = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/images/american.webp",
@@ -365,7 +407,8 @@ HORROR_IMG = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/images/finaldes.webp",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/images/freddy.webp",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/images/terrified.webp",
-  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/images/texas.webp"
+  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/images/texas.webp",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/horror/images/horror-homes.webp"
 ]
 
 HORROR_TRAILER = [
@@ -376,7 +419,8 @@ HORROR_TRAILER = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/trailers/final-trailer.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/trailers/freddie-trailer.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/trailers/terrified-trailer.mp4",
-  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/trailers/texas-trailer.mp4"
+  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/trailers/texas-trailer.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/horror/trailers/horror-homes-trailer.mp4"
 ]
 
 HORROR_VIDS = [
@@ -387,10 +431,11 @@ HORROR_VIDS = [
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/movies/final-vid.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/movies/freddie-vid.mp4",
   "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/movies/terrified-vid.mp4",
-  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/movies/texas-vid.mp4"
+  "https://s3-us-west-1.amazonaws.com/not-flix-dev/movie-data/horror/movies/texas-vid.mp4",
+  "https://not-flix-dev.s3-us-west-1.amazonaws.com/movie-data/horror/movies/horror-homes-vid.mp4"
 ]
 
-HORROR_MOVIE_DATA = [american, bird_box, chucky, conjuring, final, freddie, terrifier, texas]
+HORROR_MOVIE_DATA = [american, bird_box, chucky, conjuring, final, freddie, terrifier, texas, horror_homes]
 
 HORROR_MOVIE_DATA.each_with_index do |movie_data, i|
   formatMovie(movie_data, HORROR_IMG[i], HORROR_TRAILER[i], HORROR_VIDS[i])

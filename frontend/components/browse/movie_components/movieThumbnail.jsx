@@ -123,7 +123,7 @@ class MovieThumbnail extends React.Component {
         className="movie-thumbnail-slide"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
-        style={this.props.idx ? {
+        style={this.props.offSet ? {
           transform: `translateX(${this.props.offSet[0]}px)`,
           display: `${this.props.offSet[1] ? 'flex' : 'none'}`
         } : {position: 'relative'}}
