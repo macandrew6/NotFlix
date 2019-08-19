@@ -118,6 +118,7 @@ class MovieThumbnail extends React.Component {
   render() {
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons } = this.state;
+    console.log("should be showing the minus sign", this.state.movieAddedToList);
     return (
       <div 
         className="movie-thumbnail-slide"
