@@ -10,9 +10,8 @@ class MovieThumbnail extends React.Component {
       movie: this.props.movie.movieUrl
     };
     this.state = {
-      movie_id: this.props.movie.id,
-      user_id: this.props.user.id,
-      movieAddedToList: false,
+      movieId: this.props.movie.id,
+      userId: this.props.user.id,
       height: 149,
       width: 250,
       source: this.sources.trailer,
@@ -70,8 +69,6 @@ class MovieThumbnail extends React.Component {
     e.stopPropagation();
     e.preventDefault();
     this.setState({
-      // height: 260,
-      // width: 460,
       showButtons: true
     });
     setTimeout(() => {
@@ -82,8 +79,6 @@ class MovieThumbnail extends React.Component {
   handleMouseLeave(e) {
     e.preventDefault();
     this.setState({
-      height: 149,
-      width: 250,
       showButtons: false
     });
     setTimeout(() => {
@@ -102,23 +97,21 @@ class MovieThumbnail extends React.Component {
     e.preventDefault();
     const assData = {
       user_movie: {
-        user_id: this.state.user_id,
-        movie_id: this.state.movie_id
+        userId: this.state.userId,
+        movieId: this.state.movieId
       }
     };
+    console.log(assData);
     setTimeout(() => {
       this.props.postUserMovie(assData);
     }, 300);
 
-    this.setState({
-      movieAddedToList: true
-    });
   }
       
   render() {
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons } = this.state;
-    console.log("should be showing the minus sign", this.state.movieAddedToList);
+
     return (
       <div 
         className="movie-thumbnail-slide"
@@ -150,16 +143,16 @@ class MovieThumbnail extends React.Component {
             <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
               <i className="fas fa-volume-up"></i>
             </div>
-            {this.state.movieAddedToList ?
+            {this.props.movieAdded ?
               <button 
-                disabled={!this.state.movieAddedToList}
+                disabled={!this.props.movieAdded}
                 className="remove-movie-btn" 
                 onClick={this.handleRemoveMovie} 
               >
                 <i className="fas fa-minus-circle"></i>
               </button> :
               <button 
-                disabled={this.state.movieAddedToList} 
+                disabled={this.props.movieAdded} 
                 className="add-movie-btn" 
                 onClick={this.handleAddMovie}
               >

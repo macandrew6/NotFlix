@@ -85,6 +85,16 @@ class GenreLists extends React.Component {
     return visibleVidArr;
   }
 
+  addedUserMovies() {
+    this.props.userMovies.forEach(userMovie => {
+      if (this.props.movies.includes(userMovie)) {
+        return true;
+      }
+    });
+
+    return false;
+  }
+
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.moviesInGenre !== prevState.moviesInGenre) {
       return { moviesInGenre: nextProps.moviesInGenre};
@@ -98,6 +108,7 @@ class GenreLists extends React.Component {
     const { moviesInGenre, showSliderButtons, leftMostIndex } = this.state;
 
     const offSets = this.getXOffsets(moviesInGenre.length, leftMostIndex, 30, 250);
+    const movieAdded = this.addedUserMovies();
 
     return (
       <div className="genre-lists-container">
@@ -118,6 +129,7 @@ class GenreLists extends React.Component {
                   movie={movie} 
                   user={user}
                   postUserMovie={postUserMovie}
+                  movieAdded={movieAdded}
                 />
               ))
             }
