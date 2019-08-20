@@ -10,11 +10,16 @@ class Api::MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    @movie.update_attributes(movie_params)
+    debugger
+    if @movie.update(movie_params)
+      render :show
+    else
+      render json: @movie.errors.full_messages, status: 422
+    end
   end
 
   private
   def movie_params
-    params.require(:movie).permit(:user_movie)
+    params.require(:movie).permit(:userMovie, :description, :rating, :content_length, :title)
   end
 end

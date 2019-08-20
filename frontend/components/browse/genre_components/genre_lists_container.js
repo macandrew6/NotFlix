@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import GenreLists from './genre_lists';
-import { fetchMovies } from '../../../actions/movies.js';
+import { fetchMovies, updateMovie } from '../../../actions/movies.js';
 import { postUserMovie } from '../../../actions/my_list.js';
 
 const mapStateToProps = ({entities: { movies, userMovies, users }, session}, ownProps) => ({
@@ -14,7 +14,8 @@ const mapStateToProps = ({entities: { movies, userMovies, users }, session}, own
 
 const mapDispatchToProps = dispatch => ({
   fetchMovies: () => dispatch(fetchMovies()),
-  postUserMovie: (assData) => dispatch(postUserMovie(assData)) 
+  postUserMovie: (assData) => dispatch(postUserMovie(assData)),
+  updateMovie: (movieData) => dispatch(updateMovie(movieData)) 
 });
 
 

@@ -7,7 +7,6 @@ export default (oldState={}, action) => {
     case RECEIVE_ALL_MOVIES:
       return merge({}, oldState, action.movies);
     case RECEIVE_MOVIE:
-    // debugger;
       return merge({}, oldState, {[action.movie.id]: action.movie});
     default:
       return oldState;

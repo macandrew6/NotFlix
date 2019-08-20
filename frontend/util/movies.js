@@ -12,9 +12,9 @@ export const fetchMovie = id => (
   })
 );
 
-export const editMovie = data => {
+export const updateMovie = data => {
   $.ajax({
-    method: 'UPDATE',
+    method: 'PATCH',
     url: `/api/movies/${data.id}`,
     data
   });

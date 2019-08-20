@@ -104,7 +104,7 @@ class GenreLists extends React.Component {
   }
 
   render() {
-    const { genre, postUserMovie, user } = this.props;
+    const { genre, postUserMovie, updateMovie, user } = this.props;
     const { moviesInGenre, showSliderButtons, leftMostIndex } = this.state;
 
     const offSets = this.getXOffsets(moviesInGenre.length, leftMostIndex, 30, 250);
@@ -129,6 +129,7 @@ class GenreLists extends React.Component {
                   movie={movie} 
                   user={user}
                   postUserMovie={postUserMovie}
+                  updateMovie={updateMovie}
                   movieAdded={movieAdded}
                 />
               ))

@@ -22,3 +22,11 @@ export const fetchMovie = (id) => dispatch => (
   MoviesUtil.fetchMovie(id)
     .then(movie => dispatch(receiveMovie(movie)))
 );
+
+export const updateMovie = (data) => dispatch => {
+  console.log(data);
+  return (
+  MoviesUtil.updateMovie(data)
+    .then(movie => dispatch(receiveMovie(movie)))
+  );
+};

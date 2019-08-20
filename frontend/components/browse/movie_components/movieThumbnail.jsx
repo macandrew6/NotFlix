@@ -101,9 +101,11 @@ class MovieThumbnail extends React.Component {
         movieId: this.state.movieId
       }
     };
-    console.log(assData);
+    const movie = Object.assign({}, this.props.movie, {userMovie: !this.props.movie.userMovie});
+    console.log(movie);
     setTimeout(() => {
       this.props.postUserMovie(assData);
+      this.props.updateMovie(movie);
     }, 300);
 
   }
