@@ -16,6 +16,6 @@ export const updateMovie = data => {
   $.ajax({
     method: 'PATCH',
     url: `/api/movies/${data.id}`,
-    data
+    data: data
   });
 };
