@@ -1,7 +1,6 @@
 class Api::UserMoviesController < ApplicationController
   def create
     @user_movie = UserMovie.new(user_movies_params)
-    debugger
     if @user_movie.save
       render :index
     else
