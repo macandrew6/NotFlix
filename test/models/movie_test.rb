@@ -9,6 +9,7 @@
 #  content_length :string           not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  user_movie     :boolean          default(FALSE)
 #
 
 require 'test_helper'
