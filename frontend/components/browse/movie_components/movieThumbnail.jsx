@@ -102,7 +102,7 @@ class MovieThumbnail extends React.Component {
       }
     };
     const movie = Object.assign({}, this.props.movie, {userMovie: !this.props.movie.userMovie});
-    console.log(movie);
+    console.log(assData, movie);
     setTimeout(() => {
       this.props.postUserMovie(assData);
       this.props.updateMovie(movie);
@@ -113,7 +113,7 @@ class MovieThumbnail extends React.Component {
   render() {
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons } = this.state;
-
+    console.log(movie.userMovie);
     return (
       <div 
         className="movie-thumbnail-slide"
@@ -145,16 +145,16 @@ class MovieThumbnail extends React.Component {
             <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
               <i className="fas fa-volume-up"></i>
             </div>
-            {this.props.movieAdded ?
+            {movie.userMovie ?
               <button 
-                disabled={!this.props.movieAdded}
+                disabled={!movie.userMovie}
                 className="remove-movie-btn" 
                 onClick={this.handleRemoveMovie} 
               >
                 <i className="fas fa-minus-circle"></i>
               </button> :
               <button 
-                disabled={this.props.movieAdded} 
+                disabled={movie.userMovie} 
                 className="add-movie-btn" 
                 onClick={this.handleAddMovie}
               >
