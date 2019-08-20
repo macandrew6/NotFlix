@@ -11,3 +11,11 @@ export const fetchMovie = id => (
     url: `/api/movies/${id}`
   })
 );
+
+export const editMovie = data => {
+  $.ajax({
+    method: 'UPDATE',
+    url: `/api/movies/${data.id}`,
+    data
+  });
+};
