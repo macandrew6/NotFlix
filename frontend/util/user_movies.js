@@ -5,10 +5,13 @@ export const fetchUserMovies = () => (
   })
 );
 
-export const postUserMovie = data => (
-  $.ajax({
-    method: 'POST',
-    url: `/api/user_movies/`,
-    data: data,
-  })
-);
+export const postUserMovie = data => {
+  console.log(data);
+  return (
+    $.ajax({
+      method: 'POST',
+      url: `/api/user_movies/`,
+      data: data,
+    })
+  );
+};

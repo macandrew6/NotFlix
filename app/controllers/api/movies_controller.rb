@@ -12,7 +12,7 @@ class Api::MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie[:user_movie] = params[:userMovie]
     if @movie.save
-      render 'api/movies/show'
+      render :show
     else
       render json: @movie.errors.full_messages, status: 422
     end

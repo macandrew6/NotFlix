@@ -10,12 +10,13 @@ class MovieThumbnail extends React.Component {
       movie: this.props.movie.movieUrl
     };
     this.state = {
-      movieId: this.props.movie.id,
-      userId: this.props.user.id,
+      movie_id: this.props.movie.id,
+      user_id: this.props.user.id,
       height: 149,
       width: 250,
       source: this.sources.trailer,
       autoplay: false,
+      userMovie: this.props.movie.userMovie,
       showButtons: false,
       toggleControls: false,
     };
@@ -97,11 +98,14 @@ class MovieThumbnail extends React.Component {
     e.preventDefault();
     const assData = {
       user_movie: {
-        userId: this.state.userId,
-        movieId: this.state.movieId
+        user_id: this.state.user_id,
+        movie_id: this.state.movie_id
       }
     };
-    const movie = Object.assign({}, this.props.movie, {userMovie: !this.props.movie.userMovie});
+    const movie = Object.assign({}, this.props.movie, {userMovie: !this.state.userMovie});
+    this.setState({
+      userMovie: !this.state.userMovie
+    });
     console.log(assData, movie);
     setTimeout(() => {
       this.props.postUserMovie(assData);
@@ -113,7 +117,6 @@ class MovieThumbnail extends React.Component {
   render() {
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons } = this.state;
-    console.log(movie.userMovie);
     return (
       <div 
         className="movie-thumbnail-slide"
@@ -147,14 +150,14 @@ class MovieThumbnail extends React.Component {
             </div>
             {movie.userMovie ?
               <button 
-                disabled={!movie.userMovie}
+                disabled={!this.state.userMovie}
                 className="remove-movie-btn" 
                 onClick={this.handleRemoveMovie} 
               >
                 <i className="fas fa-minus-circle"></i>
               </button> :
               <button 
-                disabled={movie.userMovie} 
+                disabled={this.state.userMovie} 
                 className="add-movie-btn" 
                 onClick={this.handleAddMovie}
               >

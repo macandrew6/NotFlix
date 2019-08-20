@@ -9,10 +9,16 @@ const receiveUserMovies = (userMovies) => ({
 
 export const fetchUserMovies = () => dispatch => (
   UserMoviesUtil.fetchUserMovies()
-    .then(movies => dispatch(receiveUserMovies(movies)))
+    .then(movies => {
+      console.log(movies);
+      dispatch(receiveUserMovies(movies));
+    })
 );
 
-export const postUserMovie = (association) => dispatch => (
-  UserMoviesUtil.postUserMovie(association)
-    .then(() => dispatch(receiveUserMovies()))
-);
+export const postUserMovie = (association) => dispatch => {
+  console.log(association);
+  return (
+    UserMoviesUtil.postUserMovie(association)
+      .then(() => dispatch(receiveUserMovies()))
+    );
+};
