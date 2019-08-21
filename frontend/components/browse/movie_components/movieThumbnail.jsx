@@ -9,7 +9,6 @@ class MovieThumbnail extends React.Component {
       trailer: this.props.movie.trailerUrl,
       movie: this.props.movie.movieUrl
     };
-    let addedMovie = this.props.movie.userMovie;
     this.state = {
       movie_id: this.props.movie.id,
       user_id: this.props.user.id,
@@ -17,7 +16,7 @@ class MovieThumbnail extends React.Component {
       width: 250,
       source: this.sources.trailer,
       autoplay: false,
-      userMovie: addedMovie,
+      userMovie: false,
       showButtons: false,
       toggleControls: false,
     };
@@ -92,6 +91,16 @@ class MovieThumbnail extends React.Component {
   handleRemoveMovie(e) {
     e.preventDefault();
     //send some data to the database to delete this association from the db
+    const assData = {
+      user_movie: {
+        user_id: this.state.user_id,
+        movie_id: this.state.movie_id
+      }
+    };
+
+    setTimeout(() => {
+      
+    });
     console.log('i dont do anything yet, but im supposed to remove this movie from my list');
   }
 
@@ -119,6 +128,7 @@ class MovieThumbnail extends React.Component {
   render() {
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons, userMovie } = this.state;
+    console.log(movie.userMovie);
     return (
       <div 
         className="movie-thumbnail-slide"
