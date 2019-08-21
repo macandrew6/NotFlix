@@ -6,12 +6,20 @@ export const fetchUserMovies = () => (
 );
 
 export const postUserMovie = data => {
-  console.log(data);
   return (
     $.ajax({
       method: 'POST',
       url: `/api/user_movies/`,
       data: data,
+    })
+  );
+};
+
+export const removeUserMovie = id => {
+  return (
+    $.ajax({
+      method: 'DELETE',
+      url: `/api/user_movies/${id}`
     })
   );
 };

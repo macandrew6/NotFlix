@@ -1,4 +1,3 @@
-
 @user_movies.each do |user_movie|
   if current_user.id == user_movie.user_id
     json.set! user_movie.id do

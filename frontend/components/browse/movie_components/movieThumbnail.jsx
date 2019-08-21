@@ -97,10 +97,10 @@ class MovieThumbnail extends React.Component {
         movie_id: this.state.movie_id
       }
     };
-
+    const movie = Object.assign({}, this.props.movie, {userMovie: false});
     setTimeout(() => {
-      
-    });
+      this.props.updateMovie(movie);
+    }, 300);
     console.log('i dont do anything yet, but im supposed to remove this movie from my list');
   }
 
@@ -128,7 +128,6 @@ class MovieThumbnail extends React.Component {
   render() {
     const { movie } = this.props;
     const { width, height, source, autoplay, showButtons, userMovie } = this.state;
-    console.log(movie.userMovie);
     return (
       <div 
         className="movie-thumbnail-slide"
