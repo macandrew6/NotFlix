@@ -9,6 +9,7 @@ class MovieThumbnail extends React.Component {
       trailer: this.props.movie.trailerUrl,
       movie: this.props.movie.movieUrl
     };
+    let addedMovie = this.props.movie.userMovie;
     this.state = {
       movie_id: this.props.movie.id,
       user_id: this.props.user.id,
@@ -16,7 +17,7 @@ class MovieThumbnail extends React.Component {
       width: 250,
       source: this.sources.trailer,
       autoplay: false,
-      userMovie: this.props.movie.userMovie,
+      userMovie: addedMovie,
       showButtons: false,
       toggleControls: false,
     };
@@ -103,20 +104,21 @@ class MovieThumbnail extends React.Component {
       }
     };
     const movie = Object.assign({}, this.props.movie, {userMovie: !this.state.userMovie});
-    this.setState({
-      userMovie: !this.state.userMovie
-    });
+    
     console.log(assData, movie);
     setTimeout(() => {
       this.props.postUserMovie(assData);
       this.props.updateMovie(movie);
     }, 300);
 
+    this.setState({
+      userMovie: !this.state.userMovie
+    });
   }
       
   render() {
     const { movie } = this.props;
-    const { width, height, source, autoplay, showButtons } = this.state;
+    const { width, height, source, autoplay, showButtons, userMovie } = this.state;
     return (
       <div 
         className="movie-thumbnail-slide"
@@ -150,14 +152,14 @@ class MovieThumbnail extends React.Component {
             </div>
             {movie.userMovie ?
               <button 
-                disabled={!this.state.userMovie}
+                disabled={!userMovie}
                 className="remove-movie-btn" 
                 onClick={this.handleRemoveMovie} 
               >
                 <i className="fas fa-minus-circle"></i>
               </button> :
               <button 
-                disabled={this.state.userMovie} 
+                disabled={userMovie} 
                 className="add-movie-btn" 
                 onClick={this.handleAddMovie}
               >
