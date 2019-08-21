@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieThumbnail from '../movie_components/movieThumbnail';
+import MovieThumbnailContainer from '../movie_components/movieThumbnail_container';
 import LeftArrow from './left_arrow';
 import RightArrow from './right_arrow';
 
@@ -111,14 +111,12 @@ class GenreLists extends React.Component {
         <div className="movie-thumbnail-slide-container">
             {
               moviesInGenre.map((movie, idx) => (
-                <MovieThumbnail 
+                <MovieThumbnailContainer
                   idx={idx}
                   offSet={offSets[idx]}
                   key={movie.id} 
                   movie={movie} 
                   user={user}
-                  postUserMovie={postUserMovie}
-                  updateMovie={updateMovie}
                 />
               ))
             }

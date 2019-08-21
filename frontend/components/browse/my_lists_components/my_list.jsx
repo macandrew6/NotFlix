@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar_components/nav_bar_container.js';
-import MovieThumbnail from '../movie_components/movieThumbnail';
+import MovieThumbnailContainer from '../movie_components/movieThumbnail_container';
 
 class MyList extends React.Component {
   constructor(props){
@@ -19,7 +19,7 @@ class MyList extends React.Component {
         <h2>My List</h2>
         <div className="my-list-movies-container">
           {userMovies.map(userMovie => (
-            <MovieThumbnail
+            <MovieThumbnailContainer
               key={userMovie.id} 
               movie={userMovie}
               user={user}  
