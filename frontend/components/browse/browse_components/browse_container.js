@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { logout } from '../../../actions/session';
-import { fetchMovies } from '../../../actions/movies'; 
-import { fetchGenres } from '../../../actions/genres'; 
+import { logout } from '../../../actions/session_action';
+import { fetchMovies } from '../../../actions/movies_action'; 
+import { fetchGenres } from '../../../actions/genres_action'; 
 
 import Browse from './browse';
 

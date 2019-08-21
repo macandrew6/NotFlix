@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { logout } from '../../../actions/session';
-import { fetchMovies } from '../../../actions/movies';
+import { logout } from '../../../actions/session_action';
+import { fetchMovies } from '../../../actions/movies_action';
 import NavBar from './nav_bar';
 
 const mapStateToProps = ({entities: {users, movies}, session}, ownProps) => ({

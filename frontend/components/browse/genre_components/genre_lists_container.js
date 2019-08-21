@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import GenreLists from './genre_lists';
-import { fetchMovies, updateMovie } from '../../../actions/movies.js';
-import { postUserMovie } from '../../../actions/my_list.js';
+import { fetchMovies, updateMovie } from '../../../actions/movies_action.js';
+import { postUserMovie } from '../../../actions/my_list_action.js';
 
 const mapStateToProps = ({entities: { movies, userMovies, users }, session}, ownProps) => ({
   user: users[session.id],

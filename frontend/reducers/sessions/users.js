@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER } from '../../actions/session';
+import { RECEIVE_CURRENT_USER } from '../../actions/session_action';
 
 export default (oldState={}, action) => {
   Object.freeze(oldState);

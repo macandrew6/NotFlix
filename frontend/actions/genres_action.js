@@ -1,4 +1,4 @@
-import * as GenreUtil from '../util/genres';
+import * as GenreUtil from '../util/genres_util';
 
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchUserMovies } from '../../../actions/my_list';
+import { fetchUserMovies } from '../../../actions/my_list_action.js';
 import MyList from './my_list';
 
 const mapStateToProps = ({ entities: { userMovies, users }, session}) => ({

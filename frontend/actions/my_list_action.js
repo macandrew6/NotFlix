@@ -1,4 +1,4 @@
-import * as UserMoviesUtil from '../util/user_movies';
+import * as UserMoviesUtil from '../util/user_movies_util';
 
 export const RECEIVE_USER_MOVIES = 'RECEIVE_USER_MOVIES';
 

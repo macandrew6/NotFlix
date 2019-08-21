@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchPage from './search_page';
-import { AuthRoute } from '../../../../util/route.js';
+import { AuthRoute } from '../../../../util/route_util.js';
 import { Route, Redirect } from 'react-router-dom';
 
 class SearchBar extends React.Component {

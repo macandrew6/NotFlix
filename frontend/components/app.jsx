@@ -4,7 +4,7 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route.js';
+import { AuthRoute, ProtectedRoute } from '../util/route_util.js';
 import SplashPage from './splash_page';
 import SignupFormContainer from './session_form/signup_container';
 import LoginFormContainer from './session_form/login_container';

@@ -1,4 +1,4 @@
-import { RECEIVE_GENRES } from '../../actions/genres';
+import { RECEIVE_GENRES } from '../../actions/genres_action';
 import merge from 'lodash/merge';
 
 export default (oldState={}, action) => {

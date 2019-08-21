@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_MOVIES, RECEIVE_MOVIE } from '../../actions/movies';
+import { RECEIVE_ALL_MOVIES, RECEIVE_MOVIE } from '../../actions/movies_action';
 import merge from 'lodash/merge';
 
 export default (oldState={}, action) => {

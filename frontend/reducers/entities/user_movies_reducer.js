@@ -1,4 +1,4 @@
-import { RECEIVE_USER_MOVIES } from '../../actions/my_list';
+import { RECEIVE_USER_MOVIES } from '../../actions/my_list_action';
 import merge from 'lodash/merge';
 
 export default (oldState={}, action) => {

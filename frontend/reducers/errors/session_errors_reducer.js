@@ -1,7 +1,7 @@
 import { 
   RECEIVE_SESSION_ERRORS, 
   CLEAR_ERRORS 
-} from '../../actions/session';
+} from '../../actions/session_action';
 
 export default (oldState=[], action) => {
   Object.freeze(oldState);

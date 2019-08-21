@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import MovieWatch from './movie_watch';
-import { fetchMovie } from '../../../actions/movies.js';
+import { fetchMovie } from '../../../actions/movies_action.js';
 
 const mapStateToProps = (state, ownProps) => {
   return {
