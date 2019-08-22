@@ -1,4 +1,8 @@
-import { RECEIVE_USER_MOVIES } from '../../actions/my_list_action';
+import { 
+  RECEIVE_USER_MOVIES, 
+  REMOVE_USER_MOVIE 
+} from '../../actions/my_list_action';
+
 import merge from 'lodash/merge';
 
 export default (oldState={}, action) => {
@@ -6,6 +10,10 @@ export default (oldState={}, action) => {
   switch (action.type) {
     case RECEIVE_USER_MOVIES:
       return merge({}, oldState, action.userMovies);
+    case REMOVE_USER_MOVIE:
+      let newState = merge({}, oldState);
+      delete newState[action.id];
+      return newState;    
     default:
       return oldState;
   }

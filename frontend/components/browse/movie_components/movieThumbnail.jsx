@@ -90,16 +90,16 @@ class MovieThumbnail extends React.Component {
 
   handleRemoveMovie(e) {
     e.preventDefault();
-    //send some data to the database to delete this association from the db
-    const assData = {
-      user_movie: {
-        user_id: this.state.user_id,
-        movie_id: this.state.movie_id
+    console.log("current movie",this.props.movie);
+    console.log("user movies", this.props.userMovies);
+    for (let i = 0; i < this.props.userMovies.length; i++) {
+      if(this.props.userMovies[i].title === this.props.movie.title) {
+        console.log("index of the current video", i);
+        this.props.removeUserMovie(i);
       }
-    };
-    const movie = Object.assign({}, this.props.movie, {userMovie: false});
+    }
     setTimeout(() => {
-      this.props.updateMovie(movie);
+      // this.props.updateMovie(movie);
     }, 300);
     console.log('i dont do anything yet, but im supposed to remove this movie from my list');
   }
@@ -161,16 +161,14 @@ class MovieThumbnail extends React.Component {
             </div>
             {movie.userMovie ?
               <button 
-                disabled={!userMovie}
                 className="remove-movie-btn" 
-                onClick={this.handleRemoveMovie} 
+                onClick={e => this.handleRemoveMovie(e)} 
               >
                 <i className="fas fa-minus-circle"></i>
               </button> :
               <button 
-                disabled={userMovie} 
                 className="add-movie-btn" 
-                onClick={this.handleAddMovie}
+                onClick={e => this.handleAddMovie(e)}
               >
                 <i className="fas fa-plus"></i>
               </button>
