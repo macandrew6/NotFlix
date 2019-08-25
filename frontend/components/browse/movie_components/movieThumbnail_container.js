@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom';
 import MovieThumbnail from './movieThumbnail';
 import { 
   postUserMovie, 
-  removeUserMovie 
+  removeUserMovie,
+  fetchUserMovies 
 } from '../../../actions/my_list_action';
 import { updateMovie } from '../../../actions/movies_action';
 
@@ -19,7 +20,8 @@ const mapStateToProps = ({entities: { userMovies }}, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   postUserMovie: (assData) => dispatch(postUserMovie(assData)),
   updateMovie: (movie) => dispatch(updateMovie(movie)),
-  removeUserMovie: id => dispatch(removeUserMovie(id))
+  removeUserMovie: id => dispatch(removeUserMovie(id)),
+  fetchUserMovies: () => dispatch(fetchUserMovies())
 });
 
 export default withRouter(connect(
