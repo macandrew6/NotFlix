@@ -13,7 +13,9 @@ const mapStateToProps = ({entities: { userMovies }}, ownProps) => {
     offSet: ownProps.offSet,
     movie: ownProps.movie,
     user: ownProps.user,
-    userMovies: Object.keys(userMovies)
+    userMovies: Object.keys(userMovies).map((keys, i) => {
+      return [keys, Object.values(userMovies)[i]];
+    })
   };
 };
 
