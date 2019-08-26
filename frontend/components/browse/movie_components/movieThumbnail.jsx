@@ -92,17 +92,17 @@ class MovieThumbnail extends React.Component {
     e.preventDefault();
     console.log("current movie",this.props.movie);
     console.log("user movies", this.props.userMovies);
-    // for (let i = 0; i < this.props.userMovies.length; i++) {
-    //   if(this.props.userMovies[i].title === this.props.movie.title) {
-    //     // problem right now is sending user movie data to the front end
-    //     // with their respective id's attached
-    //     // so that we can remove the current user video data properly from the back
-    //     console.log("index of the current video", i);
-    //     this.props.removeUserMovie(i + 1); 
-    //     this.props.fetchUserMovies();
-    //     console.log("user movies 2", this.props.userMovies);
-    //   }
-    // }
+    for (let i = 0; i < this.props.userMovies.length; i++) {
+      if(this.props.userMovies[i][1].title === this.props.movie.title) {
+        // problem right now is sending user movie data to the front end
+        // with their respective id's attached
+        // so that we can remove the current user video data properly from the back
+        console.log("index of the current video", this.props.userMovies[i][0]);
+        this.props.removeUserMovie(this.props.userMovies[i][0]); 
+        this.props.fetchUserMovies();
+        console.log("user movies 2", this.props.userMovies[i][1]);
+      }
+    }
 
     setTimeout(() => {
       // this.props.updateMovie(movie);
