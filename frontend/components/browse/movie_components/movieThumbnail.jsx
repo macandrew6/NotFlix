@@ -97,7 +97,7 @@ class MovieThumbnail extends React.Component {
         // problem right now is sending user movie data to the front end
         // with their respective id's attached
         // so that we can remove the current user video data properly from the back
-        console.log("index of the current video", this.props.userMovies[i][0]);
+        console.log("userMovie", this.props.userMovies[i][1]);
         this.props.removeUserMovie(this.props.userMovies[i][0]); 
         this.props.fetchUserMovies();
         console.log("user movies 2", this.props.userMovies[i][1]);
@@ -120,10 +120,11 @@ class MovieThumbnail extends React.Component {
     };
     const movie = Object.assign({}, this.props.movie, {userMovie: !this.state.userMovie});
     
-    console.log(assData, movie);
+    console.log();
     setTimeout(() => {
       this.props.postUserMovie(assData);
-      this.props.updateMovie(movie);
+      // this.props.updateMovie(movie);
+      // this.props.fetchMovies();
     }, 300);
 
     this.setState({
