@@ -13,7 +13,7 @@ const mapStateToProps = ({entities: { userMovies }}, ownProps) => {
     offSet: ownProps.offSet,
     movie: ownProps.movie,
     user: ownProps.user,
-    userMovies: Object.values(userMovies)
+    userMovies: Object.keys(userMovies)
   };
 };
 
