@@ -90,8 +90,8 @@ class MovieThumbnail extends React.Component {
 
   handleRemoveMovie(e) {
     e.preventDefault();
-    console.log("current movie",this.props.movie);
-    console.log("user movies", this.props.userMovies);
+    const movie = Object.assign({}, this.props.movie, { userMovie: !this.state.userMovie });
+    console.log(movie);
     for (let i = 0; i < this.props.userMovies.length; i++) {
       if(this.props.userMovies[i][1].title === this.props.movie.title) {
         // problem right now is sending user movie data to the front end
@@ -99,15 +99,15 @@ class MovieThumbnail extends React.Component {
         // so that we can remove the current user video data properly from the back
         console.log("userMovie", this.props.userMovies[i][1]);
         this.props.removeUserMovie(this.props.userMovies[i][0]); 
+        this.props.updateMovie(movie);
         this.props.fetchUserMovies();
         console.log("user movies 2", this.props.userMovies[i][1]);
       }
     }
 
-    setTimeout(() => {
-      // this.props.updateMovie(movie);
-    }, 300);
-    console.log('i dont do anything yet, but im supposed to remove this movie from my list');
+    this.setState({
+      userMovie: !this.state.userMovie
+    });
   }
 
   handleAddMovie(e) {
@@ -120,11 +120,11 @@ class MovieThumbnail extends React.Component {
     };
     const movie = Object.assign({}, this.props.movie, {userMovie: !this.state.userMovie});
     
-    console.log();
+    console.log(movie);
     setTimeout(() => {
       this.props.postUserMovie(assData);
-      // this.props.updateMovie(movie);
-      // this.props.fetchMovies();
+      this.props.updateMovie(movie);
+      this.props.fetchMovies();
     }, 300);
 
     this.setState({
