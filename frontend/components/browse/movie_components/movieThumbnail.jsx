@@ -101,7 +101,6 @@ class MovieThumbnail extends React.Component {
         this.props.removeUserMovie(this.props.userMovies[i][0]); 
         this.props.updateMovie(movie);
         this.props.fetchUserMovies();
-        console.log("user movies 2", this.props.userMovies[i][1]);
       }
     }
 
