@@ -94,9 +94,6 @@ class MovieThumbnail extends React.Component {
     console.log(movie);
     for (let i = 0; i < this.props.userMovies.length; i++) {
       if(this.props.userMovies[i][1].title === this.props.movie.title) {
-        // problem right now is sending user movie data to the front end
-        // with their respective id's attached
-        // so that we can remove the current user video data properly from the back
         console.log("userMovie", this.props.userMovies[i][1]);
         this.props.removeUserMovie(this.props.userMovies[i][0]); 
         this.props.updateMovie(movie);
