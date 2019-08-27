@@ -95,9 +95,7 @@ class MovieThumbnail extends React.Component {
     for (let i = 0; i < this.props.userMovies.length; i++) {
       if(this.props.userMovies[i][1].title === this.props.movie.title) {
         console.log("userMovie", this.props.userMovies[i][1]);
-        this.props.removeUserMovie(this.props.userMovies[i][0]); 
-        this.props.updateMovie(movie);
-        this.props.fetchUserMovies();
+        this.props.removeUserMovie(this.props.userMovies[i][0]); // get a response // user response to remove usermovie entry from redux store
       }
     }
 
@@ -129,7 +127,7 @@ class MovieThumbnail extends React.Component {
   }
       
   render() {
-    const { movie } = this.props;
+    const { isUserMovie, movie } = this.props;
     const { width, height, source, autoplay, showButtons, userMovie } = this.state;
     return (
       <div 
@@ -162,7 +160,7 @@ class MovieThumbnail extends React.Component {
             <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
               <i className="fas fa-volume-up"></i>
             </div>
-            {movie.userMovie ?
+            {isUserMovie ?
               <button 
                 className="remove-movie-btn" 
                 onClick={e => this.handleRemoveMovie(e)} 

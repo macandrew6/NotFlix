@@ -3,9 +3,11 @@ import { withRouter } from 'react-router-dom';
 import { fetchUserMovies } from '../../../actions/my_list_action.js';
 import MyList from './my_list';
 
-const mapStateToProps = ({ entities: { userMovies, users }, session}) => ({
+const mapStateToProps = ({ entities: { userMovies, movies, users }, session}) => ({
   user: users[session.id],
-  userMovies: Object.values(userMovies)
+  movies: Object.values(movies).filter(movie => {
+    return userMovies[movie.id];
+  })
 });
 
 
