@@ -90,15 +90,14 @@ class MovieThumbnail extends React.Component {
 
   handleRemoveMovie(e) {
     e.preventDefault();
-    const movie = Object.assign({}, this.props.movie, { userMovie: !this.state.userMovie });
-    console.log(this.props.userMovies);
-    console.log(this.props.movie);
-    for (let i = 0; i < this.props.userMovies.length; i++) {
-      console.log(this.props.userMovies[i][1], this.props.movie.title);
-      if(this.props.userMovies[i][1].title === this.props.movie.title) {
-        console.log("userMovie", this.props.userMovies[i][1]);
-        this.props.removeUserMovie(this.props.userMovies[i][0]); // get a response // user response to remove usermovie entry from redux store
-      }
+    // console.log(this.props.userMovies);
+    // console.log(this.props.movie);
+    for (let i = 0; i <= this.props.userMovies.length; i++) {
+      console.log(this.props.userMovies[i][0]);
+      // if(this.props.userMovies[i][1].title === this.props.movie.title) {
+      //   console.log("userMovie", this.props.userMovies[i][0]);
+      //   this.props.removeUserMovie(this.props.userMovies[i][0]); // get a response // user response to remove usermovie entry from redux store
+      // }
     }
 
     this.setState({
@@ -114,9 +113,8 @@ class MovieThumbnail extends React.Component {
         movie_id: this.state.movie_id
       }
     };
-    const movie = Object.assign({}, this.props.movie, {userMovie: !this.state.userMovie});
     
-    console.log(movie);
+    console.log(assData);
     setTimeout(() => {
       this.props.postUserMovie(assData);
     }, 300);
