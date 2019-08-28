@@ -28,6 +28,7 @@ export const postUserMovie = (association) => dispatch => {
 };
 
 export const removeUserMovie = id => dispatch => {
+  console.log(id);
   return (
     UserMoviesUtil.removeUserMovie(id)
       .then((id) => dispatch(deleteUserMovie(id)))
