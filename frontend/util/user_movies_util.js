@@ -1,9 +1,11 @@
-export const fetchUserMovies = () => (
-  $.ajax({
-    method: 'GET',
-    url: '/api/user_movies'
-  })
-);
+export const fetchUserMovies = () => {
+  return (
+    $.ajax({
+      method: 'GET',
+      url: '/api/user_movies'
+    })
+  );
+};
 
 export const postUserMovie = data => {
   return (

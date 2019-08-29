@@ -6,7 +6,7 @@ import {
   removeUserMovie,
   fetchUserMovies 
 } from '../../../actions/my_list_action';
-import { updateMovie } from '../../../actions/movies_action';
+import { fetchMovie } from '../../../actions/movies_action';
 
 const mapStateToProps = ({entities: { userMovies }}, ownProps) => {
   return {
@@ -23,8 +23,8 @@ const mapStateToProps = ({entities: { userMovies }}, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  fetchMovie: (id) => dispatch(fetchMovie(id)),
   postUserMovie: (assData) => dispatch(postUserMovie(assData)),
-  updateMovie: (movie) => dispatch(updateMovie(movie)),
   removeUserMovie: id => dispatch(removeUserMovie(id)),
   fetchUserMovies: () => dispatch(fetchUserMovies())
 });

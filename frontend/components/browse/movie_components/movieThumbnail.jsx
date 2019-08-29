@@ -96,6 +96,7 @@ class MovieThumbnail extends React.Component {
       }
       if (this.props.userMovies[i][1].id === this.props.movie.id) {
         this.props.removeUserMovie(this.props.userMovies[i][0]);
+        //bug in changing the store after delete request
       }
     }
 
@@ -115,6 +116,7 @@ class MovieThumbnail extends React.Component {
     
     console.log(assData);
     this.props.postUserMovie(assData);
+    //bug in changing the store after post request
 
     this.setState({
       userMovie: !this.state.userMovie
