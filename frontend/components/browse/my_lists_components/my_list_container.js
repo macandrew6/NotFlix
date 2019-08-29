@@ -8,10 +8,10 @@ const mapStateToProps = ({ entities: { userMovies, movies, users }, session}) =>
     user: users[session.id],
     movies: Object.values(movies).filter(movie => {
       if (userMovies[movie.id]) {
+        console.log(userMovies[movie.id]);
         return userMovies[movie.id];
       }
-    }),
-    userMovies: Object.values(userMovies)
+    })
   };
 };
 
