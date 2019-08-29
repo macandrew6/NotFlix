@@ -12,7 +12,7 @@ export default (oldState={}, action) => {
       return merge({}, oldState, action.userMovies);
     case REMOVE_USER_MOVIE:
       let newState = merge({}, oldState);
-      console.log(action.id);
+      console.log(action);
       delete newState[action.id];
       return newState;    
     default:

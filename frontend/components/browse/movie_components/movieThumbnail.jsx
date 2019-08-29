@@ -91,8 +91,12 @@ class MovieThumbnail extends React.Component {
   handleRemoveMovie(e) {
     e.preventDefault();
     for (let i = 0; i <= this.props.userMovies.length; i++) {
-      console.log(this.props.userMovies[i][0]);
-      this.props.removeUserMovie(this.props.userMovies[i][0]); // get a response // user response to remove usermovie entry from redux store
+      if (this.props.userMovies[i] === undefined) {
+        return;
+      }
+      if (this.props.userMovies[i][1].id === this.props.movie.id) {
+        this.props.removeUserMovie(this.props.userMovies[i][0]);
+      }
     }
 
     this.setState({
@@ -110,9 +114,7 @@ class MovieThumbnail extends React.Component {
     };
     
     console.log(assData);
-    setTimeout(() => {
-      this.props.postUserMovie(assData);
-    }, 300);
+    this.props.postUserMovie(assData);
 
     this.setState({
       userMovie: !this.state.userMovie

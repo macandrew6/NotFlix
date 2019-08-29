@@ -14,7 +14,9 @@ class Api::UserMoviesController < ApplicationController
 
   def destroy
     @user_movie = UserMovie.find(params[:id])
-    @user_movie.destroy
+    if @user_movie.destroy
+      render :index
+    end
   end
 
   private
