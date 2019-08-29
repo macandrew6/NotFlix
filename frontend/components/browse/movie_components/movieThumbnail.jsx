@@ -9,7 +9,6 @@ class MovieThumbnail extends React.Component {
       trailer: this.props.movie.trailerUrl,
       movie: this.props.movie.movieUrl
     };
-    const isUserMovie = this.props.isUserMovie;
     this.state = {
       movie_id: this.props.movie.id,
       user_id: this.props.user.id,
@@ -17,7 +16,7 @@ class MovieThumbnail extends React.Component {
       width: 250,
       source: this.sources.trailer,
       autoplay: false,
-      userMovie: isUserMovie,
+      userMovie: false,
       showButtons: false,
       toggleControls: false,
     };
@@ -91,14 +90,9 @@ class MovieThumbnail extends React.Component {
 
   handleRemoveMovie(e) {
     e.preventDefault();
-    // console.log(this.props.userMovies);
-    // console.log(this.props.movie);
     for (let i = 0; i <= this.props.userMovies.length; i++) {
       console.log(this.props.userMovies[i][0]);
-      // if(this.props.userMovies[i][1].title === this.props.movie.title) {
-      //   console.log("userMovie", this.props.userMovies[i][0]);
-        this.props.removeUserMovie(this.props.userMovies[i][0]); // get a response // user response to remove usermovie entry from redux store
-      // }
+      this.props.removeUserMovie(this.props.userMovies[i][0]); // get a response // user response to remove usermovie entry from redux store
     }
 
     this.setState({
@@ -159,7 +153,7 @@ class MovieThumbnail extends React.Component {
             <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
               <i className="fas fa-volume-up"></i>
             </div>
-            {this.state.userMovie ?
+            {isUserMovie ?
               <button 
                 className="remove-movie-btn" 
                 onClick={e => this.handleRemoveMovie(e)} 

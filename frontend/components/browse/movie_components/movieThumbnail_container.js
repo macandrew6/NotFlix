@@ -13,7 +13,9 @@ const mapStateToProps = ({entities: { userMovies }}, ownProps) => {
     offSet: ownProps.offSet,
     movie: ownProps.movie,
     user: ownProps.user,
-    isUserMovie: Boolean(userMovies[ownProps.movie.id]), // big change!
+    isUserMovie: Object.values(userMovies).map(userMovie => {
+      return userMovie.id;
+    }).includes(ownProps.movie.id), // big change!
     userMovies: Object.keys(userMovies).map((keys, i) => {
       return [keys, Object.values(userMovies)[i]];
     })
