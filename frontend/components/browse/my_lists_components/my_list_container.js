@@ -4,15 +4,16 @@ import { fetchUserMovies } from '../../../actions/my_list_action.js';
 import MyList from './my_list';
 
 const mapStateToProps = ({ entities: { userMovies, movies, users }, session}) => {
-  console.log(userMovies);
   return {
     user: users[session.id],
     movies: Object.values(movies).filter(movie => {
-      return userMovies[movie.id];
-    })
+      if (userMovies[movie.id]) {
+        return userMovies[movie.id];
+      }
+    }),
+    userMovies: Object.values(userMovies)
   };
 };
-
 
 const mapDispatchToProps = dispatch => ({
   fetchUserMovies: () => dispatch(fetchUserMovies())

@@ -90,14 +90,9 @@ class MovieThumbnail extends React.Component {
 
   handleRemoveMovie(e) {
     e.preventDefault();
-    // console.log(this.props.userMovies);
-    // console.log(this.props.movie);
     for (let i = 0; i <= this.props.userMovies.length; i++) {
       console.log(this.props.userMovies[i][0]);
-      // if(this.props.userMovies[i][1].title === this.props.movie.title) {
-      //   console.log("userMovie", this.props.userMovies[i][0]);
-      //   this.props.removeUserMovie(this.props.userMovies[i][0]); // get a response // user response to remove usermovie entry from redux store
-      // }
+      this.props.removeUserMovie(this.props.userMovies[i][0]); // get a response // user response to remove usermovie entry from redux store
     }
 
     this.setState({
@@ -127,6 +122,7 @@ class MovieThumbnail extends React.Component {
   render() {
     const { isUserMovie, movie } = this.props;
     const { width, height, source, autoplay, showButtons, userMovie } = this.state;
+    console.log(isUserMovie);
     return (
       <div 
         className="movie-thumbnail-slide"

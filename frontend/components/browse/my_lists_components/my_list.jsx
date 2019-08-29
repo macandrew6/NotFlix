@@ -12,13 +12,14 @@ class MyList extends React.Component {
   }
 
   render() {
-    const { movies, user } = this.props;
+    const { movies, user, userMovies } = this.props;
+    console.log(movies);
     return (
       <div className="my-list-page">
         <NavBarContainer />
         <h2>My List</h2>
         <div className="my-list-movies-container">
-          {movies.map(userMovie => (
+          {userMovies.map(userMovie => (
             <MovieThumbnailContainer
               key={userMovie.id} 
               movie={userMovie}
