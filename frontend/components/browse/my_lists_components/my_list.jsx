@@ -9,6 +9,7 @@ class MyList extends React.Component {
  
   componentDidMount() {
     this.props.fetchUserMovies();
+    // this.props.fetchMovies();
   }
 
   render() {
