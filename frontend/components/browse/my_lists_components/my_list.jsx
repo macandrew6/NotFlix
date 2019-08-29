@@ -9,18 +9,22 @@ class MyList extends React.Component {
  
   componentDidMount() {
     this.props.fetchUserMovies();
-    // this.props.fetchMovies();
   }
 
   render() {
-    const { movies, user } = this.props;
-    console.log(this.props.movies);
+    const { movies, user, userMoviesKeys } = this.props;
+    const userMovies = movies.filter(movie => {
+      if (userMoviesKeys.includes(movie.id)) {
+        return movie;
+      }
+    });
+    
     return (
       <div className="my-list-page">
         <NavBarContainer />
         <h2>My List</h2>
         <div className="my-list-movies-container">
-          {movies.map(userMovie => (
+          {userMovies.map(userMovie => (
             <MovieThumbnailContainer
               key={userMovie.id} 
               movie={userMovie}

@@ -9,6 +9,7 @@ class MovieThumbnail extends React.Component {
       trailer: this.props.movie.trailerUrl,
       movie: this.props.movie.movieUrl
     };
+    const isUserMovie = this.props.isUserMovie;
     this.state = {
       movie_id: this.props.movie.id,
       user_id: this.props.user.id,
@@ -16,7 +17,7 @@ class MovieThumbnail extends React.Component {
       width: 250,
       source: this.sources.trailer,
       autoplay: false,
-      userMovie: false,
+      userMovie: isUserMovie,
       showButtons: false,
       toggleControls: false,
     };
@@ -38,7 +39,7 @@ class MovieThumbnail extends React.Component {
     this.player.subscribeToStateChange(this.handleStateChange);
   }
 
-  handleStateChange(state, prevState) {
+  handleStateChange(state) {
     this.setState({
       player: state
     });
@@ -126,7 +127,7 @@ class MovieThumbnail extends React.Component {
       
   render() {
     const { isUserMovie, movie } = this.props;
-    const { width, height, source, autoplay, showButtons, userMovie } = this.state;
+    const { width, height, source, autoplay, showButtons } = this.state;
     return (
       <div 
         className="movie-thumbnail-slide"
@@ -158,7 +159,7 @@ class MovieThumbnail extends React.Component {
             <div className="toggle-thumbnail-sound" onClick={this.toggleSound(false)}>
               <i className="fas fa-volume-up"></i>
             </div>
-            {isUserMovie ?
+            {this.state.userMovie ?
               <button 
                 className="remove-movie-btn" 
                 onClick={e => this.handleRemoveMovie(e)} 
