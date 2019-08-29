@@ -13,7 +13,7 @@ class MyList extends React.Component {
 
   render() {
     const { movies, user } = this.props;
-
+    
     return (
       <div className="my-list-page">
         <NavBarContainer />

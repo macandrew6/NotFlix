@@ -11,10 +11,7 @@ export default (oldState={}, action) => {
     case RECEIVE_USER_MOVIES:
       return merge({}, oldState, action.userMovies);
     case REMOVE_USER_MOVIE:
-      let newState = merge({}, oldState);
-      console.log(action);
-      delete newState[action.id];
-      return newState;    
+      return action.remainingUserMovies;    
     default:
       return oldState;
   }

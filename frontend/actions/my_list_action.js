@@ -8,9 +8,9 @@ const receiveUserMovies = (userMovies) => ({
   userMovies
 }); 
 
-const deleteUserMovie = (id) => ({
+const deleteUserMovie = (remainingUserMovies) => ({
   type: REMOVE_USER_MOVIE,
-  id
+  remainingUserMovies
 });
 
 export const fetchUserMovies = () => dispatch => (
@@ -23,13 +23,15 @@ export const fetchUserMovies = () => dispatch => (
 export const postUserMovie = (association) => dispatch => {
   return (
     UserMoviesUtil.postUserMovie(association)
-      .then(() => dispatch(receiveUserMovies()))
+      .then(userMovies => {
+        dispatch(receiveUserMovies(userMovies));
+      })
     );
 };
 
 export const removeUserMovie = id => dispatch => {
   return (
     UserMoviesUtil.removeUserMovie(id)
-      .then((id) => dispatch(deleteUserMovie(id)))
+      .then((remainingUserMovies) => dispatch(deleteUserMovie(remainingUserMovies)))
   );
 };
