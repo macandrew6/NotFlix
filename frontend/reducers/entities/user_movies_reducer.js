@@ -14,7 +14,6 @@ export default (oldState={}, action) => {
     case REMOVE_USER_MOVIE:
       return action.remainingUserMovies;  
     case CLEAR_USER_MOVIES:
-      console.log(action);
       return {};  
     default:
       return oldState;

@@ -15,7 +15,6 @@ const deleteUserMovie = (remainingUserMovies) => ({
 });
 
 export const clearUserMovies = () => {
-  console.log("im here baby");
   return ({
     type: CLEAR_USER_MOVIES
   });
