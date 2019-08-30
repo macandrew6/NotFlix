@@ -15,7 +15,9 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount() {
+    console.log('im here baby');
     this.props.clearErrors();
+    this.props.clearUserMovies();
   }
 
   handleDemoUser(e) {

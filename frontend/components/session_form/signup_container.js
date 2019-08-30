@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { signup, clearErrors } from '../../actions/session_action';
+import { clearUserMovies } from '../../../actions/my_list_action';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   action: userForm => dispatch(signup(userForm)),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  clearUserMovies: () => dispatch(clearUserMovies())
 });
 
 export default connect(
