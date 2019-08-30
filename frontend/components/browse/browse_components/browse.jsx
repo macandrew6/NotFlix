@@ -17,7 +17,6 @@ class Browse extends React.Component {
   }
 
   componentDidMount() {
-    // this.player.subscribeToStateChange(this.handleStateChange);
     this.props.fetchGenres();
     this.props.fetchMovies();
     this.props.fetchUserMovies();
