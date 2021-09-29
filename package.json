@@ -6,7 +6,7 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "lodash": "^4.17.13",
     "npm": "^6.9.0",
     "react": "^16.8.6",
